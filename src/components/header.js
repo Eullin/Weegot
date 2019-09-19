@@ -4,6 +4,7 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header
+    data-testid="header"
     style={{
       background: `rebeccapurple`,
       marginBottom: `1.45rem`,
