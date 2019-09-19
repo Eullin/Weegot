@@ -1,12 +1,10 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
+import React from "react"
+import { render } from "@testing-library/react"
 import Header from '../header'
 
-describe("Header", () => {
-    it("renders correctly", () => {
-        const tree = renderer
-        .create(<Header siteTitle="Default Starter" />)
-        .toJSON()
-        expect(tree).toMatchSnapshot()
-    })
+test("Displays the correct title", () => {
+  const { getByTestId } = render(<Header />)
+  // Assertion
+  expect(getByTestId("header")).toMatchSnapshot()
+  // --> Test will pass
 })
