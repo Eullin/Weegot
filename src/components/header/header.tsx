@@ -1,9 +1,7 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
-import styled from "styled-components"
 import { space } from "styled-system"
 import { useStaticQuery, graphql } from "gatsby"
+import { Container, LogoWrapper, ItemsWrapper } from "./header.style"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -18,26 +16,21 @@ const Header = () => {
 
   return (
     <>
-      <header>
-        <img src={data.site.siteMetadata.logo} />
-        <div>
+      <Container>
+        <LogoWrapper>
+          <img src={data.site.siteMetadata.logo} />
+          <span>Weegot</span>
+        </LogoWrapper>
+        <ItemsWrapper>
           <ul>
             <li>Asesoría</li>
             <li>Asesoría</li>
             <li>Asesoría</li>
           </ul>
-        </div>
-      </header>
+        </ItemsWrapper>
+      </Container>
     </>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header
