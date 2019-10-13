@@ -6,7 +6,7 @@ import Brand from "./brand"
 import BurgerMenu from "./burguerMenu"
 import CollapseMenu from "./collapseMenu"
 
-const Navbar = props => {
+const Navbar = (props: any) => {
   const barAnimation = useSpring({
     from: { transform: "translate3d(0, -10rem, 0)" },
     transform: "translate3d(0, 0, 0)",
@@ -25,22 +25,22 @@ const Navbar = props => {
         <FlexContainer>
           <Brand />
           <NavLinks style={linkAnimation}>
-            <a href="/">link n1</a>
-            <a href="/">link n2</a>
-            <a href="/">link n3</a>
-            <a href="/">link n4</a>
+            <a href="#">link n1</a>
+            <a href="#">link n2</a>
+            <a href="#">link n3</a>
+            <a href="#">link n4</a>
           </NavLinks>
           <BurgerWrapper>
             <BurgerMenu
               navbarState={props.navbarState}
-              handleNavbar={props.handleNavbar}
+              handleNavbar={props.onClick}
             />
           </BurgerWrapper>
         </FlexContainer>
       </NavBar>
       <CollapseMenu
         navbarState={props.navbarState}
-        handleNavbar={props.handleNavbar}
+        handleNavbar={props.onClick}
       />
     </>
   )

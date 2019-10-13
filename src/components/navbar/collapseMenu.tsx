@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { useSpring, animated } from "react-spring"
 
-const CollapseMenu = props => {
+const CollapseMenu = (props: any) => {
   const { open } = useSpring({ open: props.navbarState ? 0 : 1 })
 
   if (props.navbarState === true) {
@@ -67,7 +67,7 @@ const NavLinks = styled.ul`
   & a {
     font-size: 1.4rem;
     line-height: 2;
-    color: #dfe6e9;
+    color: ${({ theme }) => theme.colors.secondaryBrand};
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;

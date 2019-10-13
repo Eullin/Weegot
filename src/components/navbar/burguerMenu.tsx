@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const Burgermenu = props => {
+const Burgermenu = (props: any) => {
   return (
     <Wrapper onClick={props.handleNavbar}>
       <div className={props.navbarState ? "open" : ""}>
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
     position: relative;
     width: 3.5rem;
     height: 0.4rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
     transition: all ease-in-out 0.2s;
   }
 
