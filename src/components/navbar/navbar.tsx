@@ -1,10 +1,26 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import { useSpring, animated, config } from "react-spring"
 
 import Brand from "./brand"
 import BurgerMenu from "./burguerMenu"
 import CollapseMenu from "./collapseMenu"
+
+const MenuItems = [
+  {
+    label: "FAQ",
+    url: "/FAQ",
+  },
+  {
+    label: "Weegot Help",
+    url: "/weegot-help",
+  },
+  {
+    label: "Contacto",
+    url: "/contacto",
+  },
+]
 
 const Navbar = (props: any) => {
   const barAnimation = useSpring({
@@ -24,12 +40,11 @@ const Navbar = (props: any) => {
       <NavBar style={barAnimation}>
         <FlexContainer>
           <Brand />
-          <NavLinks style={linkAnimation}>
-            <a href="#">link n1</a>
-            <a href="#">link n2</a>
-            <a href="#">link n3</a>
-            <a href="#">link n4</a>
-          </NavLinks>
+          {MenuItems.map((item, index) => (
+            <NavLinks style={linkAnimation}>
+              <Link to={item.url} key={index}>{item.label}</Link>
+            </NavLinks>
+          ))}
           <BurgerWrapper>
             <BurgerMenu
               navbarState={props.navbarState}

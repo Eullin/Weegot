@@ -1,37 +1,33 @@
-import React, { ReactChildren, FC } from "react"
+import React, { ReactChildren, FC, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
 
-import Header from "./header/header"
 import theme from "../theme"
 import GlobalStyle from "../styles/Global"
+import NavBar from "../components/navbar/navbar"
 
 interface LayoutProps {
   children: ReactChildren
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const [navbarOpen, setNavbarOpen] = useState(false)
+
+  const handleNavbar = () => {
+    setNavbarOpen(!navbarOpen)
+  }
 
   return (
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <NavBar navbarState={navbarOpen} onClick={handleNavbar} />
         <div
           style={{
             margin: `0 auto`,
             maxWidth: 960,
             padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
+            paddingTop: "8rem",
           }}
         >
           <main>{children}</main>
