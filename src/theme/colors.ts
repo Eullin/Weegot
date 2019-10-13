@@ -8,6 +8,7 @@ const colors = {
   inactiveColor: "#767676", // 6
   white: "#FFF", // 7
   secondaryBrand: "#2C2741", // 8
+  borderColor: "#DBDBDB",
 }
-  
+
 export default colors
