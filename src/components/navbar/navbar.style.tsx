@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 const HeaderWrapper = styled.header`
   position: relative;
-  z-index: 99999;
   transition: 0.25s ease-in-out;
 `
 
