@@ -1,5 +1,6 @@
 import React, { FC } from "react"
 import RcDrawer from "rc-drawer"
+import "rc-drawer/assets/index.css"
 
 type DrawerProps = {
   className?: string
@@ -37,6 +38,7 @@ const Drawer: FC<DrawerProps> = ({
       <RcDrawer
         open={open}
         onMaskClick={toggleHandler}
+        className={addAllClasses.join(" ")}
         width={width}
         placement={placement}
         handler={false}
