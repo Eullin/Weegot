@@ -2,10 +2,9 @@ import React, { ReactChildren, FC } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
 
-import Header from "./header/header"
 import theme from "../theme"
 import GlobalStyle from "../styles/Global"
-
+import NavBar from "../components/navbar/navbar"
 interface LayoutProps {
   children: ReactChildren
 }
@@ -25,7 +24,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <ThemeProvider theme={theme}>
       <>
         <GlobalStyle />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <NavBar />
         <div
           style={{
             margin: `0 auto`,
