@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import styled from "styled-components"
 
 const Background = styled.div`
@@ -7,6 +7,6 @@ const Background = styled.div`
   max-height: 400px;
 `
 
-const Hero = () => <Background>Hero</Background>
+const Hero: FC = ({children}) => <Background>{children}</Background>
 
 export default Hero
