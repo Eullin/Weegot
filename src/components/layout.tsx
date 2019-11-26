@@ -5,11 +5,8 @@ import { ThemeProvider } from "styled-components"
 import theme from "../theme"
 import GlobalStyle from "../styles/Global"
 import NavBar from "../components/navbar/navbar"
-interface LayoutProps {
-  children: ReactChildren
-}
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout: FC = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
