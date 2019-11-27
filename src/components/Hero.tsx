@@ -10,6 +10,6 @@ const Background = styled.div`
   width: 100%;
 `
 
-const Hero: FC = ({ children }) => <Background>{children}</Background>
+const Hero: FC = ({children}) => <Background>{children}</Background>
 
 export default Hero
