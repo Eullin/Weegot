@@ -1,9 +1,25 @@
-import styled from 'styled-components'
+import styled from "styled-components"
+import {flexbox, FlexboxProps} from 'styled-system'
 
-export const HeroImg = styled.div`
-margin: 0 auto;
-img {
-    position: absolute;
-    bottom: -16rem;
-}
+export const ImgContainer = styled.div`
+  margin: 2rem auto;
+`
+
+export const Container = styled.div<FlexboxProps>`
+  display: flex;
+  ${flexbox}
+`
+
+export const Title = styled.span`
+  padding: 2rem 2rem;
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors.white};
+`
+
+export const ImgWrapp = styled.div`
+  position: relative;
+`
+
+export const ImgWrapper = styled.div`
+  position: absolute;
 `

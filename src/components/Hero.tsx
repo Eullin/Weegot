@@ -2,9 +2,12 @@ import React, { FC } from "react"
 import styled from "styled-components"
 
 const Background = styled.div`
-  max-width: 700px;
+  margin: 2rem 0;
+
   background-color: ${({ theme }) => theme.colors.secondaryBrand};
-  max-height: 400px;
+  border-radius: 14px;
+  padding: 1rem;
+  width: 100%;
 `
 
 const Hero: FC = ({children}) => <Background>{children}</Background>
