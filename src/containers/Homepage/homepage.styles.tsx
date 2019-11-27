@@ -1,10 +1,14 @@
 import styled from "styled-components"
+import {flexbox, FlexboxProps} from 'styled-system'
 
 export const ImgContainer = styled.div`
   margin: 2rem auto;
 `
 
-export const Container = styled.div``
+export const Container = styled.div<FlexboxProps>`
+  display: flex;
+  ${flexbox}
+`
 
 export const Title = styled.span`
   padding: 2rem 2rem;

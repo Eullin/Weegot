@@ -21,17 +21,15 @@ const Homepage = () => {
   return (
     <>
       <Hero>
-        <Container>
+        <Container flexDirection="column">
           <Title>
             Ahorra tiempo y dinero <br />
             en la compra de tu <br />
             próximo auto
           </Title>
-          <div style={{ maxWidth: "200px" }}>
-            <div style={{ position: "relative", top: "10px" }}>
-              <Img fluid={data.file.childImageSharp.fluid} />
+            <div style={{ maxWidth: "200px", flexGrow: 1 }}>
+                <Img fluid={data.file.childImageSharp.fluid} style={{ position: "relative", bottom: "-50px" }}/>
             </div>
-          </div>
         </Container>
       </Hero>
       <Button>Contáctanos</Button>
