@@ -4,7 +4,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Hero from "../../components/hero"
 import Button from "../../components/button"
-import { Container, Title } from "./homepage.styles"
+import TextArea from "../../components/TextArea"
+import Divider from "../../components/Divider"
+import { Container, Title, ButtonWrapp } from "./homepage.styles"
 
 const Homepage = () => {
   const data = useStaticQuery(graphql`
@@ -35,7 +37,20 @@ const Homepage = () => {
           </div>
         </Container>
       </Hero>
-      <Button>Contáctanos</Button>
+      <ButtonWrapp>
+        <Button>Contáctanos</Button>
+      </ButtonWrapp>
+      <TextArea>
+        <span>
+          Somos expertos al momento de negociar la compra y venta de
+          automóviles.​ Evita ser engañado por concesionarios sin principios
+          que, con el objetivo de lograr una venta, implementan estrategias
+          maliciosas que afectan tu pago inicial, tus cuotas y hasta tu
+          situación crediticia. Te garantizamos el mejor negocio posible según
+          tu situación.
+        </span>
+      </TextArea>
+      <Divider />
     </>
   )
 }
