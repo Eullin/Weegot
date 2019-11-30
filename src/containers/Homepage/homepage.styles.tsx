@@ -14,7 +14,6 @@ export const Container = styled.div<FlexboxProps>`
     justify-content: space-between;
   }
 `
-
 export const Title = styled.span`
   padding: 2rem 2rem 0;
   font-size: 1.5rem;
