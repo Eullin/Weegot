@@ -1,10 +1,9 @@
 import styled from "styled-components"
-import { flexbox, FlexboxProps } from "styled-system"
+import {flexbox, FlexboxProps} from 'styled-system'
 
 export const ImgContainer = styled.div`
   margin: 2rem auto;
 `
-
 
 export const Container = styled.div<FlexboxProps>`
   display: flex;
@@ -15,8 +14,6 @@ export const Container = styled.div<FlexboxProps>`
     justify-content: space-between;
   }
 `
-
-
 export const Title = styled.span`
   padding: 2rem 2rem 0;
   font-size: 1.5rem;
