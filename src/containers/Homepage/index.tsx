@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Hero from "../../components/hero"
 import Button from "../../components/button"
-import { ImgWrapper, ImgWrapp, Container, Title } from "./homepage.styles"
+import { Container, Title } from "./homepage.styles"
 
 const Homepage = () => {
   const data = useStaticQuery(graphql`
@@ -27,9 +27,12 @@ const Homepage = () => {
             en la compra de tu <br />
             próximo auto
           </Title>
-            <div style={{ maxWidth: "200px", flexGrow: 1 }}>
-                <Img fluid={data.file.childImageSharp.fluid} style={{ position: "relative", bottom: "-50px" }}/>
-            </div>
+          <div style={{ maxWidth: "400px", flexGrow: 1 }}>
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              style={{ position: "relative", bottom: "-40px" }}
+            />
+          </div>
         </Container>
       </Hero>
       <Button>Contáctanos</Button>
