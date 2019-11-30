@@ -27,18 +27,11 @@ const Homepage = () => {
             en la compra de tu <br />
             próximo auto
           </Title>
-<<<<<<< Updated upstream
-          <div style={{ maxWidth: "200px" }}>
-            <div style={{ position: "relative", top: "10px" }}>
-              <Img fluid={data.file.childImageSharp.fluid} />
-            </div>
-=======
           <div style={{ maxWidth: "400px", flexGrow: 1 }}>
             <Img
               fluid={data.file.childImageSharp.fluid}
               style={{ position: "relative", bottom: "-40px" }}
             />
->>>>>>> Stashed changes
           </div>
         </Container>
       </Hero>
