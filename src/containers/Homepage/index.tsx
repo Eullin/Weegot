@@ -21,7 +21,7 @@ const Homepage = () => {
   return (
     <>
       <Hero>
-        <Container>
+        <Container flexDirection="column">
           <Title>
             Ahorra tiempo y dinero <br />
             en la compra de tu <br />
