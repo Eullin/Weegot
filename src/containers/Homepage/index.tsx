@@ -23,7 +23,7 @@ const Homepage = () => {
   return (
     <>
       <Hero>
-        <Container flexDirection="column">
+        <Container flexDirection={['column','row']} justifyContent="space-between">
           <Title>
             Ahorra tiempo y dinero <br />
             en la compra de tu <br />
