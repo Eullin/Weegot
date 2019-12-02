@@ -1,13 +1,11 @@
 import colors from "./colors"
 
 const space = [0, 4, 8, 16, 32, 64]
-space.small = space[1]
-space.medium = space[2]
-space.large = space[3]
+
 
 export default {
   breakpoints: ['576px', '768px', '991px', '1220px'],
-  fontSizes: [12, 14, 16, 20, 24, 32],
+  fontSizes: ['16px', '18x', '25px', '32px', '45px', '50px'],
   fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
   fontFamily: ["Roboto,sans-serif"],
   lineHeights: {

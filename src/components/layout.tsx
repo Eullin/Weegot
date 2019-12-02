@@ -23,10 +23,7 @@ const Layout: FC = ({ children }) => {
         <GlobalStyle />
         <NavBar />
         <div
-          style={{
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
+        
         >
           <main>{children}</main>
           <footer>Footer</footer>
