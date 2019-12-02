@@ -9,10 +9,7 @@ export const Container = styled.div<FlexboxProps>`
   display: flex;
   flex-direction: column;
   ${flexbox}
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+
 
 `
 
