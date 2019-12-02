@@ -22,9 +22,7 @@ const Layout: FC = ({ children }) => {
       <>
         <GlobalStyle />
         <NavBar />
-        <div
-        
-        >
+        <div>
           <main>{children}</main>
           <footer>Footer</footer>
         </div>

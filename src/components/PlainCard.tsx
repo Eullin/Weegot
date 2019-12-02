@@ -1,8 +1,11 @@
 import styled from "styled-components"
-import { color, ColorProps } from 'styled-system'
+import { color, ColorProps, background, BackgroundProps } from 'styled-system'
 
-const PlainCard = styled.div<ColorProps>`
+type plainCardProps = ColorProps & BackgroundProps
+
+const PlainCard = styled.div<plainCardProps>`
   ${color}
+  ${background}
   margin: 0.2rem;
   border-radius: 14px;
   padding: 1rem;

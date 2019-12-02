@@ -1,6 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Button from "../../components/button"
 import TextArea from "../../components/TextArea"
@@ -23,7 +23,7 @@ const Homepage = () => {
   return (
     <>
       <MainContainer>
-        <PlainCard bg="secondaryBrand">
+        <PlainCard bg="secondaryBrand" >
           <Container flexDirection={['column','row']} justifyContent="space-between">
             <Title>
               Ahorra tiempo y dinero <br />
@@ -54,7 +54,13 @@ const Homepage = () => {
       </MainContainer>
       <ProcessWrap flexDirection={["column", "row"]}>
         <PlainCard bg="brandAutos">
-          Text 1
+          <TextArea>
+          <h2>Llena nuestra aplicación</h2>
+          <span>
+          Esta nos brindará toda la información necesaria para conocer tu situación y tus posibilidades
+          </span>
+          <Link to="/contacto">Comenzar ahora</Link>
+        </TextArea>
         </PlainCard>
         <PlainCard bg="secondaryBrand">
           Text 2 
