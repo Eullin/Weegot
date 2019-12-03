@@ -1,7 +1,6 @@
 import colors from "./colors"
 
-const space = [0, 4, 8, 16, 32, 64]
-
+const space = [0, 4, 8, 16, 32, 64, -120]
 
 export default {
   breakpoints: ['576px', '768px', '991px', '1220px'],
