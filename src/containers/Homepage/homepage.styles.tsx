@@ -28,6 +28,6 @@ export const ButtonWrapp = styled.div`
 export const ProcessWrap = styled.div<FlexboxProps>`
 ${flexbox}
 display: flex;
-background-color: rgba(204,78,99, 0.15);
+background-color: rgba(44,39,65, 0.05);
 padding: 1rem;
 `
