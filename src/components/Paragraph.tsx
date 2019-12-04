@@ -7,7 +7,7 @@ export type ParagraphProps = TypographyProps &
   ParamHTMLAttributes<HTMLParagraphElement>;
 
 const Paragraph = styled.p.attrs<ParagraphProps>(props => ({
-  mb: 6,
+  mb: 3,
   'data-testid': 'paragraph',
   ...props,
 }))<ParagraphProps>`

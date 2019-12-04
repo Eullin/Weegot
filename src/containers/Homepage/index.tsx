@@ -36,7 +36,7 @@ const Homepage = () => {
               <IMG
                 fluid={data.file.childImageSharp.fluid}
                 position="relative"
-                bottom={6}
+                bottom={[6, 7, 8, 9]}
               />
             </div>
           </Container>
