@@ -1,7 +1,6 @@
-import React, { FC } from "react"
 import styled from "styled-components"
 
-const TextWrapper = styled.div`
+const TextArea = styled.div`
   width: 870px;
   max-width: 100%;
   margin: 2rem auto;
@@ -25,6 +24,6 @@ const TextWrapper = styled.div`
   }
 `
 
-const TextArea: FC = ({ children }) => <TextWrapper>{children}</TextWrapper>
+
 
 export default TextArea
