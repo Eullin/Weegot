@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 import {
   flexbox,
   position,
@@ -8,21 +10,12 @@ import {
   SpaceProps,
   FlexboxProps,
   TypographyProps,
-  layout
+  layout,
 } from "styled-system"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
 
 export type HeadingProps = SpaceProps & LayoutProps & TypographyProps
 export type ContainerProps = FlexboxProps & LayoutProps
 export type ImgProps = PositionProps & SpaceProps
-
-export const CtaLink = styled(Link)`
-  text-decoration: underline;
-  color: ${({ theme }) => theme.colors.white};
-  font-weight: ${({ theme }) => theme.fontWeights[5]};
-`
-
 
 export const ImgContainer = styled.div`
   margin: 2rem auto;
@@ -46,7 +39,8 @@ export const ButtonWrapp = styled.div`
 export const ProcessWrap = styled.div<FlexboxProps>`
   ${flexbox}
   display: flex;
-  background-color: rgba(204, 78, 99, 0.15);
+  flex-direction: column;
+  background-color: ${({ theme }) => theme.colors.background};
   padding: 0 1rem 3rem;
 `
 
@@ -56,12 +50,12 @@ export const CardContainer = styled.div<FlexboxProps>`
 `
 
 export const CtaLink = styled(Link)`
-padding: 1rem;
-color: ${({ theme }) => theme.colors.white};
-text-decoration: none;
+  padding: 1rem;
+  color: ${({ theme }) => theme.colors.white};
+  text-decoration: none;
 `
 
 export const IMG = styled(Img)<ImgProps>`
-${space}
-${position}
+  ${space}
+  ${position}
 `
