@@ -1,7 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
-
 import Heading from "../../components/Heading"
 import Paragraph from '../../components/Paragraph'
 import Button from "../../components/button"
@@ -9,6 +8,7 @@ import TextArea from "../../components/TextArea"
 import {MainContainer} from "../../components/MainContainer"
 import { Container, ButtonWrapp, ProcessWrap, CtaLink, CardContainer, IMG } from "./homepage.styles"
 import PlainCard from "../../components/PlainCard"
+
 
 const Homepage = () => {
   const data = useStaticQuery(graphql`

@@ -12,5 +12,4 @@ const PlainCard = styled.div<plainCardProps>`
   width: 100%;
 `
 
-
 export default PlainCard

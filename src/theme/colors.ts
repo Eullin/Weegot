@@ -9,6 +9,7 @@ const colors = {
   white: "#FFF", // 7
   secondaryBrand: "#2C2741", // 8
   borderColor: "#DBDBDB",
+  bg: "rgba(216,92,114, 0.2)",
 }
 
 export default colors
