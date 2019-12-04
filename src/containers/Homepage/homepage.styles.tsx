@@ -1,6 +1,21 @@
 import styled from "styled-components"
-import { flexbox, FlexboxProps, typography } from "styled-system"
+import {
+  flexbox,
+  position,
+  PositionProps,
+  LayoutProps,
+  space,
+  SpaceProps,
+  FlexboxProps,
+  TypographyProps,
+  layout
+} from "styled-system"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
+
+export type HeadingProps = SpaceProps & LayoutProps & TypographyProps
+export type ContainerProps = FlexboxProps & LayoutProps
+export type ImgProps = PositionProps & SpaceProps
 
 export const CtaLink = styled(Link)`
   text-decoration: underline;
@@ -8,27 +23,16 @@ export const CtaLink = styled(Link)`
   font-weight: ${({ theme }) => theme.fontWeights[5]};
 `
 
+
 export const ImgContainer = styled.div`
   margin: 2rem auto;
 `
 
-export const Container = styled.div<FlexboxProps>`
+export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: column;
   ${flexbox}
-`
-
-export const Heading = styled.h1.attrs({ fontSize: [1, 2, 3, 4] })`
-  ${typography}
-  padding: 2rem 2rem 0;
-  color: ${({ theme }) => theme.colors.white};
-`
-
-export const Title = styled.div`
-  margin: 2.5rem auto;
-  h2 {
-    ${typography}
-  }
+  ${layout}
 `
 
 export const ButtonWrapp = styled.div`
@@ -44,4 +48,20 @@ export const ProcessWrap = styled.div<FlexboxProps>`
   display: flex;
   background-color: rgba(204, 78, 99, 0.15);
   padding: 0 1rem 3rem;
+`
+
+export const CardContainer = styled.div<FlexboxProps>`
+  ${flexbox}
+  display: flex;
+`
+
+export const CtaLink = styled(Link)`
+padding: 1rem;
+color: ${({ theme }) => theme.colors.white};
+text-decoration: none;
+`
+
+export const IMG = styled(Img)<ImgProps>`
+${space}
+${position}
 `

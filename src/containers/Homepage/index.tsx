@@ -1,18 +1,14 @@
 import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql, Link } from "gatsby"
-
-import PlainCard from "../../components/PlainCard"
+import Heading from "../../components/Heading"
+import Paragraph from '../../components/Paragraph'
 import Button from "../../components/button"
 import TextArea from "../../components/TextArea"
-import { MainContainer } from "../../components/MainContainer"
-import {
-  Container,
-  Heading,
-  ButtonWrapp,
-  ProcessWrap,
-  Title,
-} from "./homepage.styles"
+import {MainContainer} from "../../components/MainContainer"
+import { Container, ButtonWrapp, ProcessWrap, CtaLink, CardContainer, IMG } from "./homepage.styles"
+import PlainCard from "../../components/PlainCard"
+
 
 const Homepage = () => {
   const data = useStaticQuery(graphql`
@@ -29,20 +25,18 @@ const Homepage = () => {
   return (
     <>
       <MainContainer>
-        <PlainCard bg="secondaryBrand">
-          <Container
-            flexDirection={["column", "row"]}
-            justifyContent="space-between"
-          >
-            <Heading>
-              Ahorra tiempo y dinero <br />
-              en la compra de tu <br />
+        <PlainCard bg="secondaryBrand" p={3}>
+          <Container flexDirection={['column','row']} justifyContent="space-between" >
+            <Heading as="h1" color="white" pl={3} width={1}>
+              Ahorra tiempo y dinero 
+              en la compra de tu 
               próximo auto
             </Heading>
-            <div style={{ maxWidth: "400px", flexGrow: 1 }}>
-              <Img
+            <div style={{ width: "100%", flexGrow: 1 }}>
+              <IMG
                 fluid={data.file.childImageSharp.fluid}
-                style={{ position: "relative", bottom: "-40px" }}
+                position="relative"
+                bottom={[6, 7, 8, 9]}
               />
             </div>
           </Container>
@@ -50,49 +44,46 @@ const Homepage = () => {
         <ButtonWrapp>
           <Button>Contáctanos</Button>
         </ButtonWrapp>
-        <TextArea>
-          <span>
+        <Paragraph m={4} mb={4} lineHeight="normalText">
             Somos expertos al momento de negociar la compra y venta de
             automóviles.​ Evita ser engañado por concesionarios sin principios
             que, con el objetivo de lograr una venta, implementan estrategias
             maliciosas que afectan tu pago inicial, tus cuotas y hasta tu
             situación crediticia. Te garantizamos el mejor negocio posible según
             tu situación.
-          </span>
-        </TextArea>
+        </Paragraph>
       </MainContainer>
-      <ProcessWrap flexDirection={["column", "row"]}>
-        <Title>
-          <h2>Nuestro proceso</h2>
-        </Title>
-        <PlainCard bg="brandAutos">
-          <TextArea color="white">
-            <h2>Llena nuestra aplicación</h2>
-            <span>
-              Esta nos brindará toda la información necesaria para conocer tu
-              situación y tus posibilidades
-            </span>
-            <Link to="/contacto">Comenzar ahora</Link>
-          </TextArea>
-        </PlainCard>
-        <PlainCard bg="secondaryBrand">
-          <TextArea color="white">
-            <h2>Llena nuestra aplicación</h2>
-            <span>
-              Esta nos brindará toda la información necesaria para conocer tu
-              situación y tus posibilidades
-            </span>
-          </TextArea>
-        </PlainCard>
-        <PlainCard bg="brandAutos">
-          <TextArea>
-            <h2>Llena nuestra aplicación</h2>
-            <span>
-              Esta nos brindará toda la información necesaria para conocer tu
-              situación y tus posibilidades
-            </span>
-          </TextArea>
-        </PlainCard>
+      <ProcessWrap>
+      <Heading as="h2" textAlign="center" fontWeight={400} color="textColor"> Nuestro Proceso</Heading>
+        <CardContainer flexDirection={['column','row']}>
+        	<PlainCard bg="brandAutos" p={3}>
+        	  <Paragraph color="white" p={3}>
+        	  <Heading as="h2" mt={2} mb={2}>
+        	    Llena nuestra aplicación
+        	  </Heading>
+        	  Esta nos brindará toda la información necesaria para conocer tu situación y tus posibilidades
+        	</Paragraph>
+        	  <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
+        	</PlainCard>
+        	<PlainCard bg="secondaryBrand" p={3}>
+        	<Paragraph color="white" p={3}>
+        	  <Heading as="h2" mt={2} mb={2}>
+        	    Llena nuestra aplicación
+        	  </Heading>
+        	  Esta nos brindará toda la información necesaria para conocer tu situación y tus posibilidades
+        	</Paragraph>
+        	   <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
+        	</PlainCard>
+        	<PlainCard bg="brandAutos" p={3}>
+        	<Paragraph color="white" p={3}>
+        	  <Heading as="h2" mt={2} mb={2}>
+        	    Llena nuestra aplicación
+        	  </Heading>
+        	  Esta nos brindará toda la información necesaria para conocer tu situación y tus posibilidades
+        	</Paragraph>
+        	   <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
+        	</PlainCard>
+        </CardContainer>
       </ProcessWrap>
     </>
   )

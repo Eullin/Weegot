@@ -13,13 +13,13 @@ export const NavbarWrapper = styled.div`
   padding: 30px 75px;
   background-color: #fff;
   transition: 0.25s ease-in-out;
-  @media (max-width: 1400px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints[3]}) {
     padding: 25px 45px;
   }
-  @media (max-width: 990px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints[1]}) {
     padding: 15px 25px;
   }
-  @media (max-width: 575px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
     padding: 3px 15px;
   }
 `
@@ -27,7 +27,7 @@ export const NavbarWrapper = styled.div`
 export const Logo = styled.div`
   margin-right: 50px;
   flex-shrink: 0;
-  @media (max-width: 990px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints[2]}) {
     margin: 0 25px;
   }
   @media (max-width: 575px) {
@@ -36,25 +36,30 @@ export const Logo = styled.div`
   img {
     display: block;
     max-width: 10rem;
-  
+  }
 `
 export const MenuWrapper = styled.div`
   display: flex;
   flex-grow: 1;
-  @media (max-width: 990px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints[2]}) {
     display: none;
   }
 `
 export const MenuItemWrapper = styled.ul`
   display: flex;
+  flex-direction: row;
   align-items: center;
   margin-left: auto;
+  @media (max-width: ${({ theme }) => theme.breakpoints[2]}) {
+    flex-direction: column;
+  }
 `
 
 export const MenuItem = styled.li`
-  margin: 0 20px;
+  margin: 7px 20px;
   list-style: none;
   a {
+    text-decoration: none;
     padding: 5px 10px;
     white-space: nowrap;
     font-size: ${({ theme }) => theme.fontSizes[2]};
@@ -73,7 +78,7 @@ export const MenuItem = styled.li`
   }
 `
 export const MobileMenuWrapper = styled.div`
-  @media (min-width: 991px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     display: none;
   }
 `
@@ -82,8 +87,10 @@ export const DrawerContentWrapper = styled.div`
   .mobile-menu {
     display: block;
     padding-top: 60px;
+    display: flex;
+    flex-direction: column;
     li {
-      margin: 0 0 38px 0;
+      margin: 10px 0 38px 0;
       a {
         display: block;
         position: relative;

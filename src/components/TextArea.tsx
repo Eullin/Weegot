@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { color, ColorProps } from "styled-system"
 
 const TextWrapper = styled.div<ColorProps>`
+  width: 870px;
   max-width: 100%;
   margin: 2rem auto;
   padding: 0 1.5rem;
@@ -27,3 +28,4 @@ const TextWrapper = styled.div<ColorProps>`
 `
 
 export default TextWrapper
+
