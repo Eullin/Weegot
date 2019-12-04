@@ -1,12 +1,15 @@
 import styled from "styled-components"
-import { color, ColorProps, layout, LayoutProps } from "styled-system"
+import { color, ColorProps, background, BackgroundProps } from "styled-system"
 
-const PlainCard = styled.div<ColorProps>`
+type plainCardProps = ColorProps & BackgroundProps
+
+const PlainCard = styled.div<plainCardProps>`
   ${color}
-  ${layout}
-  margin: 0.2rem 0;
+  ${background}
+  margin: 0.2rem;
   border-radius: 14px;
   padding: 1rem;
+  width: 100%;
 `
 
 export default PlainCard

@@ -1,14 +1,14 @@
-import React, { FC } from "react"
 import styled from "styled-components"
 import { color, ColorProps } from "styled-system"
 
 const TextWrapper = styled.div<ColorProps>`
-  width: 870px;
   max-width: 100%;
   margin: 2rem auto;
   padding: 0 1.5rem;
   ${color}
-
+  h2 {
+    padding-bottom: 0.5rem;
+  }
   span {
     font-size: 1.5rem;
     font-weight: 400;

@@ -5,16 +5,14 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import PlainCard from "../../components/PlainCard"
 import Button from "../../components/button"
 import TextArea from "../../components/TextArea"
+import { MainContainer } from "../../components/MainContainer"
 import {
   Container,
-  Text,
-  H2,
+  Heading,
   ButtonWrapp,
-  PlainCardWrap,
-  CtaLink,
   ProcessWrap,
+  Title,
 } from "./homepage.styles"
-import MainContainer from "../../components/MainContainer"
 
 const Homepage = () => {
   const data = useStaticQuery(graphql`
@@ -32,12 +30,15 @@ const Homepage = () => {
     <>
       <MainContainer>
         <PlainCard bg="secondaryBrand">
-          <Container flexDirection={["column", "row", "row", "row"]}>
-            <Text>
+          <Container
+            flexDirection={["column", "row"]}
+            justifyContent="space-between"
+          >
+            <Heading>
               Ahorra tiempo y dinero <br />
               en la compra de tu <br />
               próximo auto
-            </Text>
+            </Heading>
             <div style={{ maxWidth: "400px", flexGrow: 1 }}>
               <Img
                 fluid={data.file.childImageSharp.fluid}
@@ -47,9 +48,7 @@ const Homepage = () => {
           </Container>
         </PlainCard>
         <ButtonWrapp>
-          <Link to="/contacto">
-            <Button>Contáctanos</Button>
-          </Link>
+          <Button>Contáctanos</Button>
         </ButtonWrapp>
         <TextArea>
           <span>
@@ -62,45 +61,38 @@ const Homepage = () => {
           </span>
         </TextArea>
       </MainContainer>
-      <ProcessWrap>
-        <H2>Nuestro proceso</H2>
-        <PlainCardWrap>
-          <PlainCard bg="brandAutos" width={[1, 1 / 4]}>
-            <TextArea color="white">
-              <h2>Llena nuestra aplicación</h2>
-              <span>
-                Esta nos brindará toda la información necesaria para conocer tu
-                situación y tus posibilidades
-              </span>{" "}
-              <br />
-              <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
-            </TextArea>
-          </PlainCard>
-          <PlainCard bg="secondaryBrand" width={[1, 1 / 4]}>
-            <TextArea color="white">
-              <h2>Negociamos por ti</h2>
-              <span>
-                Conocemos todo sobre la tasa de interés, las opciones y los
-                precios, pudiendo negociar sin problema la adquisición de tu
-                vehículo, garantizando ahorro de tiempo y dinero.
-              </span>{" "}
-              <br />
-              <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
-            </TextArea>
-          </PlainCard>
-          <PlainCard bg="brandAutos" width={[1, 1 / 4]}>
-            <TextArea color="white">
-              <h2>Entrega</h2>
-              <span>
-                Elige el lugar de entrega, que puede ser en tu casa, en el
-                concesionario o recogerlo en nuestra oficina. Si es para regalo
-                te apoyamos con la sorpresa.
-              </span>
-              <br />
-              <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
-            </TextArea>
-          </PlainCard>
-        </PlainCardWrap>
+      <ProcessWrap flexDirection={["column", "row"]}>
+        <Title>
+          <h2>Nuestro proceso</h2>
+        </Title>
+        <PlainCard bg="brandAutos">
+          <TextArea color="white">
+            <h2>Llena nuestra aplicación</h2>
+            <span>
+              Esta nos brindará toda la información necesaria para conocer tu
+              situación y tus posibilidades
+            </span>
+            <Link to="/contacto">Comenzar ahora</Link>
+          </TextArea>
+        </PlainCard>
+        <PlainCard bg="secondaryBrand">
+          <TextArea color="white">
+            <h2>Llena nuestra aplicación</h2>
+            <span>
+              Esta nos brindará toda la información necesaria para conocer tu
+              situación y tus posibilidades
+            </span>
+          </TextArea>
+        </PlainCard>
+        <PlainCard bg="brandAutos">
+          <TextArea>
+            <h2>Llena nuestra aplicación</h2>
+            <span>
+              Esta nos brindará toda la información necesaria para conocer tu
+              situación y tus posibilidades
+            </span>
+          </TextArea>
+        </PlainCard>
       </ProcessWrap>
     </>
   )

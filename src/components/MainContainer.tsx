@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
-const MainContainer = styled.div`
-  padding: 0px 1.0875rem;
+export const MainContainer = styled.div`
+  padding: 0 1.5rem;
+  padding-top: 1rem;
 `
-
-export default MainContainer

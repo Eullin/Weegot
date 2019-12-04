@@ -22,8 +22,10 @@ const Layout: FC = ({ children }) => {
       <>
         <GlobalStyle />
         <NavBar />
-        <main>{children}</main>
-        <footer>Footer</footer>
+        <div>
+          <main>{children}</main>
+          <footer>Footer</footer>
+        </div>
       </>
     </ThemeProvider>
   )

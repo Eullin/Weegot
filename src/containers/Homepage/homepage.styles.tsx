@@ -1,17 +1,6 @@
 import styled from "styled-components"
-import { flexbox, FlexboxProps } from "styled-system"
+import { flexbox, FlexboxProps, typography } from "styled-system"
 import { Link } from "gatsby"
-
-export const H2 = styled.h2`
-  color: ${({ theme }) => theme.colors.textColor};
-  text-align: center;
-  margin: 1rem 0;
-`
-
-export const ProcessWrap = styled.div`
-  background-color: ${({ theme }) => theme.colors.bg};
-  padding-top: 1rem;
-`
 
 export const CtaLink = styled(Link)`
   text-decoration: underline;
@@ -27,31 +16,32 @@ export const Container = styled.div<FlexboxProps>`
   display: flex;
   flex-direction: column;
   ${flexbox}
-  @media (min-width: 767px) {
-    justify-content: space-between;
-    flex-direction: row;
-  }
 `
 
-export const Text = styled.span`
+export const Heading = styled.h1.attrs({ fontSize: [1, 2, 3, 4] })`
+  ${typography}
   padding: 2rem 2rem 0;
-  font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.white};
+`
+
+export const Title = styled.div`
+  margin: 2.5rem auto;
+  h2 {
+    ${typography}
+  }
 `
 
 export const ButtonWrapp = styled.div`
   text-align: center;
   margin: 1.5rem 0;
-  @media (min-width: 767px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     display: none;
   }
 `
 
-export const PlainCardWrap = styled.div`
+export const ProcessWrap = styled.div<FlexboxProps>`
+  ${flexbox}
   display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  @media (min-width: 767px) {
-    flex-direction: row;
-  }
+  background-color: rgba(204, 78, 99, 0.15);
+  padding: 0 1rem 3rem;
 `
