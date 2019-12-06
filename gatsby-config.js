@@ -6,6 +6,7 @@ module.exports = {
     logo: `src/images/weegot_logo.png`,
   },
   plugins: [
+   
     {
       resolve: `gatsby-plugin-typescript`,
       options: {

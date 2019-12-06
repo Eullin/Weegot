@@ -5,11 +5,10 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Heading from "../../components/Heading"
 import Paragraph from '../../components/Paragraph'
 import Button from "../../components/button"
-import TextArea from "../../components/TextArea"
 import {MainContainer} from "../../components/MainContainer"
 import { Container, ButtonWrapp, ProcessWrap, CtaLink, CardContainer, IMG } from "./homepage.styles"
 import PlainCard from "../../components/PlainCard"
-
+import Circle from '../../components/svg/Circle'
 const Homepage = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -26,6 +25,7 @@ const Homepage = () => {
     <>
       <MainContainer>
         <PlainCard bg="secondaryBrand" p={3}>
+          <Circle />
           <Container flexDirection={['column','row']} justifyContent="space-between" >
             <Heading as="h1" color="white" pl={3} width={1}>
               Ahorra tiempo y dinero 

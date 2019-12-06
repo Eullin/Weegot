@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 33.248">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="60" height="33.248"/>
+    </clipPath>
+  </defs>
+  <g id="ayr_logo" class="cls-2">
+    <g id="ayr_logo-2" data-name="ayr_logo" transform="translate(-318.4 -301.8)">
+      <path id="Path_1679" data-name="Path 1679" d="M369.689,323.111a9.762,9.762,0,0,0,6.193-3.462,9.633,9.633,0,0,0,2.023-5.98,9.146,9.146,0,0,0-3.035-7.048q-3.035-2.782-8.632-2.776h-8.9L346.455,329.6l-9.228-25.8h-6.283L318.4,336.824h6l9.667-26.482,5.227,14.994-6.958-.056-1.54,4.811h10.15l2.372,6.733h5.688l12.8-28.426,4.283.011a6.4,6.4,0,0,1,4.608,1.416,4.853,4.853,0,0,1,1.63,3.81,5.446,5.446,0,0,1-1.517,4.1,6.41,6.41,0,0,1-4.608,1.472h-5.26l10.858,17.6h6.6Z" transform="translate(0 -1.775)"/>
+      <path id="Path_1680" data-name="Path 1680" d="M545.039,307.69l-2.113-5.89H536.8l5.193,13.016Z" transform="translate(-193.852)"/>
+    </g>
+  </g>
+</svg>

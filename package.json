@@ -15,6 +15,7 @@
     "gatsby-plugin-offline": "^3.0.7",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.1.7",
+    "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-sharp": "^2.2.22",
     "gatsby-plugin-typescript": "^2.1.11",
     "gatsby-source-filesystem": "^2.1.22",
