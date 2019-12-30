@@ -1,10 +1,11 @@
-import React, { ReactChildren, FC } from "react"
+import React, { FC } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
 
 import theme from "../theme"
 import GlobalStyle from "../styles/Global"
 import NavBar from "../components/navbar/navbar"
+import Footer from "./Footer"
 
 const Layout: FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,7 +25,7 @@ const Layout: FC = ({ children }) => {
         <NavBar />
         <div>
           <main>{children}</main>
-          <footer>Footer</footer>
+          <Footer />
         </div>
       </>
     </ThemeProvider>
