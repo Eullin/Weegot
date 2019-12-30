@@ -9,7 +9,6 @@ export const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.borderColor};
   padding: 30px 75px;
   background-color: #fff;
   transition: 0.25s ease-in-out;
