@@ -61,7 +61,7 @@ export const MenuItem = styled.li`
     text-decoration: none;
     padding: 5px 10px;
     white-space: nowrap;
-    font-size: ${({ theme }) => theme.fontSizes[2]};
+    font-size: ${({ theme }) => theme.fontSizes[6]};
     line-height: ${({ theme }) => theme.lineHeights.normal};
     font-weight: ${({ theme }) => theme.fontWeights[2]};
     color: ${({ theme }) => theme.colors.secondaryBrand};
