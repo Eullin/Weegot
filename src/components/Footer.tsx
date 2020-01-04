@@ -60,7 +60,7 @@ const Footer = () => (
       >
         2678 NW 97th Ave, Doral, FL 33172, USA
       </a>
-      <Link to="#">Privacy Policy</Link>
+      <Link to="/page-two">Privacy Policy</Link>
     </Box>
   </Container>
 )

@@ -40,7 +40,7 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Roboto`,
+            family: "Nunito",
           },
         ],
       },

@@ -13,6 +13,7 @@ import {
   CardContainer,
   IMG,
   Icon,
+  Box,
 } from "./homepage.styles"
 import PlainCard from "../../components/PlainCard"
 
@@ -29,6 +30,7 @@ const Homepage = () => {
       }
     }
   `)
+  console.log(data.allImageSharp)
   return (
     <>
       <MainContainer>
@@ -37,12 +39,12 @@ const Homepage = () => {
             flexDirection={["column", "row"]}
             justifyContent="space-between"
           >
-            <Heading as="h1" color="white" pl={3} width={1}>
+            <Heading as="h1" color="white" width={1}>
               Ahorra tiempo y dinero en la compra de tu próximo auto
             </Heading>
             <div style={{ width: "100%", flexGrow: 1 }}>
               <IMG
-                fluid={data.allImageSharp.nodes[3].fluid}
+                fluid={data.allImageSharp.nodes[8].fluid}
                 position="relative"
                 bottom={[6, 7, 8, 9]}
               />
@@ -52,48 +54,50 @@ const Homepage = () => {
         <ButtonWrapp>
           <Button>Contáctanos</Button>
         </ButtonWrapp>
-        <Paragraph m={4} mb={4} lineHeight="normalText">
-          Somos expertos al momento de negociar la compra y venta de
-          automóviles.​ Evita ser engañado por concesionarios sin principios
-          que, con el objetivo de lograr una venta, implementan estrategias
-          maliciosas que afectan tu pago inicial, tus cuotas y hasta tu
-          situación crediticia. Te garantizamos el mejor negocio posible según
-          tu situación.
-        </Paragraph>
+        <Box>
+          <Paragraph mt={4} mb={4} lineHeight="normalText">
+            Somos expertos al momento de negociar la compra y venta de
+            automóviles.​ Evita ser engañado por concesionarios sin principios
+            que, con el objetivo de lograr una venta, implementan estrategias
+            maliciosas que afectan tu pago inicial, tus cuotas y hasta tu
+            situación crediticia. Te garantizamos el mejor negocio posible según
+            tu situación.
+          </Paragraph>
+        </Box>
       </MainContainer>
       <ProcessWrap>
         <Heading as="h2" textAlign="center" fontWeight={400} color="textColor">
           Nuestro Proceso
         </Heading>
         <CardContainer flexDirection={["column", "row"]}>
-          <PlainCard p={3} textAlign={["center", "left"]}>
-            <Icon fluid={data.allImageSharp.nodes[6].fluid} />
-            <Heading as="h2" mt={2} mb={2}>
+          <PlainCard p={4} textAlign={["center", "left"]}>
+            <Icon fluid={data.allImageSharp.nodes[4].fluid} />
+            <Heading as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
               Asesoría
             </Heading>
-            <Paragraph p={3}>
+            <Paragraph fontSize={7} color="lightTextColor">
               Esta nos brindará toda la información necesaria para conocer tu
               situación y tus posibilidades
             </Paragraph>
             <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
           </PlainCard>
-          <PlainCard p={3} textAlign={["center", "left"]}>
-            <Paragraph p={3}>
-              <Icon fluid={data.allImageSharp.nodes[8].fluid} />
-              <Heading as="h2" mt={2} mb={2}>
-                Gestión
-              </Heading>
+          <PlainCard p={4} textAlign={["center", "left"]}>
+            <Icon fluid={data.allImageSharp.nodes[5].fluid} />
+            <Heading as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
+              Gestión
+            </Heading>
+            <Paragraph fontSize={7} color="lightTextColor">
               Esta nos brindará toda la información necesaria para conocer tu
               situación y tus posibilidades
             </Paragraph>
             <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
           </PlainCard>
-          <PlainCard p={3} textAlign={["center", "left"]}>
-            <Paragraph p={3}>
-              <Icon fluid={data.allImageSharp.nodes[7].fluid} />
-              <Heading as="h2" mt={2} mb={2}>
-                Delivery
-              </Heading>
+          <PlainCard p={4} textAlign={["center", "left"]}>
+            <Icon fluid={data.allImageSharp.nodes[6].fluid} />
+            <Heading as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
+              Delivery
+            </Heading>
+            <Paragraph fontSize={7} color="lightTextColor">
               Esta nos brindará toda la información necesaria para conocer tu
               situación y tus posibilidades
             </Paragraph>
