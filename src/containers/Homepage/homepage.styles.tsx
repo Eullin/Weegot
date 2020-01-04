@@ -17,9 +17,10 @@ export type HeadingProps = SpaceProps & LayoutProps & TypographyProps
 export type ContainerProps = FlexboxProps & LayoutProps
 export type ImgProps = PositionProps & SpaceProps
 
-export const Icon = styled(Img)`
+export const Icon = styled(Img)<SpaceProps>`
   max-width: 45px;
   margin-bottom: 2rem;
+  ${space}
   @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
     margin: 0 auto 2rem;
   }
@@ -55,12 +56,11 @@ export const ProcessWrap = styled.div<FlexboxProps>`
 export const CardContainer = styled.div<FlexboxProps>`
   ${flexbox}
   display: flex;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 `
 
 export const CtaLink = styled(Link)`
-  padding: 1rem;
   color: ${({ theme }) => theme.colors.textColor};
   text-decoration: none;
 `
@@ -68,4 +68,11 @@ export const CtaLink = styled(Link)`
 export const IMG = styled(Img)<ImgProps>`
   ${space}
   ${position}
+`
+
+export const Box = styled.div`
+  max-width: 800px;
+  text-align: left;
+  margin: 0 auto;
+  font-size: 16px;
 `

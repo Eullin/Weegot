@@ -1,12 +1,22 @@
 import colors from "./colors"
 
-const space = [0, 4, 8, 16, 32, 64, -46, -54, -67, -80, -124]
+const space = [0, 4, 8, 16, 35, 64, -46, -54, -67, -80, -124]
 
 export default {
   breakpoints: ["576px", "768px", "991px", "1220px", "450px"],
-  fontSizes: ["16px", "18x", "25px", "32px", "45px", "50px", "20px"],
+  fontSizes: [
+    "16px",
+    "18x",
+    "25px",
+    "32px",
+    "45px",
+    "50px",
+    "20px",
+    "1.6rem",
+    "1.8rem",
+  ],
   fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-  fontFamily: ["Roboto,sans-serif"],
+  fontFamily: ["open-sans"],
   lineHeights: {
     normal: 1,
     normalText: 1.5,

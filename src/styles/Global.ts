@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
   }
 `
 
