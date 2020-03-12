@@ -4,7 +4,7 @@ import "rc-drawer/assets/index.css"
 
 type DrawerProps = {
   className?: string
-  children?: any
+  children?: Node
   closeButton?: any
   closeButtonStyle?: any
   drawerHandler: any
