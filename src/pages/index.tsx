@@ -1,18 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Hero, Process, AboutUs } from "../containers/Homepage"
+import { MainContainer } from "../components/MainContainer"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Homepage from '../containers/Homepage'
+//import Homepage from "../containers/Homepage"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Homepage />
-
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allImageSharp {
+        nodes {
+          fluid(maxWidth: 300) {
+            originalName
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <MainContainer>
+        <Hero data={data} />
+        <AboutUs />
+        <Process />
+      </MainContainer>
+    </Layout>
+  )
+}
 
 export default IndexPage
