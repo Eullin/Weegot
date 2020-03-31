@@ -20,7 +20,7 @@ const Process = () => {
   `)
   return (
     <ProcessWrap>
-      <Heading as="h2" textAlign="center" fontWeight={400} color="textColor">
+      <Heading as="h2"  fontWeight={400} color="textColor">
         Nuestro Proceso
       </Heading>
       <CardContainer flexDirection={["column", "row"]}>

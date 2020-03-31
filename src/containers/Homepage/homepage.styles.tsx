@@ -102,3 +102,18 @@ export const HeroHeading = styled.h1.attrs<SpaceProps>(props => ({
     font-size: 3rem;
   };
 `
+
+export const Slider = styled.div`
+ul {
+  display: flex;
+  flex-direction: row; 
+}
+li {
+  width: 9.8rem;
+  heigh: 9.8rem;
+  padding: 1.5rem 0.5rem;
+}
+img{
+  max-width: 80px;
+}
+`

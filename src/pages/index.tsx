@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Hero, Process, AboutUs } from "../containers/Homepage"
+import { Hero, Process, AboutUs, BrandsSlider } from "../containers/Homepage"
 import { MainContainer } from "../components/MainContainer"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -20,13 +20,15 @@ const IndexPage = () => {
       }
     }
   `)
+  const nodes = data.allImageSharp.nodes
   return (
     <Layout>
       <SEO title="Home" />
       <MainContainer>
-        <Hero data={data} />
+        <Hero nodes={nodes} />
         <AboutUs />
         <Process />
+        <BrandsSlider />
       </MainContainer>
     </Layout>
   )

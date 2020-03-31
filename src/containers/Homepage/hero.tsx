@@ -1,11 +1,15 @@
-import React from "react"
+import React, { FC } from "react"
 import PlainCard from "../../components/PlainCard"
 import { Container, HeroHeading, IMG, ButtonWrapp } from "./homepage.styles"
 import Button from "../../components/button"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Hero = (data: any) => {
-  console.log("data", data.allImageSharp.nodes)
+interface HeroProps {
+  nodes: any;
+}
+
+const Hero: FC<HeroProps> = ({ nodes }) => {
+  console.log("data 8", nodes)
   return (
     <>
       <PlainCard bg="secondaryBrand" p={3}>
@@ -19,12 +23,12 @@ const Hero = (data: any) => {
             Ahorra tiempo y dinero en la compra de tu próximo auto
           </HeroHeading>
           <div style={{ width: "100%", flexGrow: 1 }}>
-            <IMG
-              fluid={data.allImageSharp.nodes[8].fluid}
+        {nodes &&  <IMG
+              fluid={nodes[8].fluid}
               position="relative"
               bottom={[6, 7, 8, 9]}
-            />
-          </div>
+            />}
+          </div> 
         </Container>
       </PlainCard>
       <ButtonWrapp>
