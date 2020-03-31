@@ -8,6 +8,7 @@ export type HeadingProps = SpaceProps & LayoutProps & TypographyProps
   mt: 4,
   mb: 4,
   fontWeight: 500,
+  textAlign:"center",
   ...props,
 }))<HeadingProps>`
   display: block;
