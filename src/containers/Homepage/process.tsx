@@ -25,8 +25,8 @@ const Process = () => {
       </Heading>
       <CardContainer flexDirection={["column", "row"]}>
         <PlainCard p={4} textAlign={["center", "left"]}>
-          <Icon fluid={data.allImageSharp.nodes[4].fluid} />
-          <Heading as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
+          <Icon fluid={data.allImageSharp.nodes[3].fluid} />
+          <Heading textAlign="left" as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
             Asesoría
           </Heading>
           <Paragraph fontSize={7} color="lightTextColor">
@@ -36,8 +36,8 @@ const Process = () => {
           <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
         </PlainCard>
         <PlainCard p={4} textAlign={["center", "left"]}>
-          <Icon fluid={data.allImageSharp.nodes[5].fluid} />
-          <Heading as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
+          <Icon fluid={data.allImageSharp.nodes[4].fluid} />
+          <Heading textAlign="left" as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
             Gestión
           </Heading>
           <Paragraph fontSize={7} color="lightTextColor">
@@ -47,8 +47,8 @@ const Process = () => {
           <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
         </PlainCard>
         <PlainCard p={4} textAlign={["center", "left"]}>
-          <Icon fluid={data.allImageSharp.nodes[6].fluid} />
-          <Heading as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
+          <Icon fluid={data.allImageSharp.nodes[5].fluid} />
+          <Heading textAlign="left" as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
             Delivery
           </Heading>
           <Paragraph fontSize={7} color="lightTextColor">

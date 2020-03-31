@@ -24,7 +24,7 @@ const Hero: FC<HeroProps> = ({ nodes }) => {
           </HeroHeading>
           <div style={{ width: "100%", flexGrow: 1 }}>
         {nodes &&  <IMG
-              fluid={nodes[8].fluid}
+              fluid={nodes[7].fluid}
               position="relative"
               bottom={[6, 7, 8, 9]}
             />}

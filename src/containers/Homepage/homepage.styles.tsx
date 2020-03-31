@@ -104,9 +104,13 @@ export const HeroHeading = styled.h1.attrs<SpaceProps>(props => ({
 `
 
 export const Slider = styled.div`
+overflow: hidden;
+z-indez: 9999;
+background-image: radial-gradient(circle, white, ); /* Standard syntax (must be last) */
 ul {
   display: flex;
   flex-direction: row; 
+  
 }
 li {
   width: 9.8rem;
