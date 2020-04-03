@@ -13,12 +13,14 @@ import {
   typography,
   TypographyProps,
   layout,
+  ColorProps,
 } from "styled-system"
 
 export type HeadingProps = SpaceProps & LayoutProps & TypographyProps
 
 export type ContainerProps = FlexboxProps & LayoutProps & SpaceProps
 export type ImgProps = PositionProps & SpaceProps
+export type BackgroundBoxProps = FlexboxProps & ColorProps & SpaceProps
 
 export const Icon = styled(Img)<SpaceProps>`
   max-width: 45px;
@@ -52,11 +54,12 @@ export const ButtonWrapp = styled.div`
   }
 `
 
-export const ProcessWrap = styled.div<FlexboxProps>`
+export const BackgroundBox = styled.div<BackgroundBoxProps>`
+  ${color}
   ${flexbox}
+  ${space}
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.background};
   padding: 0 1rem 3rem;
 `
 

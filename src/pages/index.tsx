@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Hero, Process, AboutUs, BrandsSlider } from "../containers/Homepage"
+import { Hero, Process, AboutUs, BrandsSlider, Delivery } from "../containers/Homepage"
 import { MainContainer } from "../components/MainContainer"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -29,6 +29,7 @@ const IndexPage = () => {
         <AboutUs />
         <Process />
         <BrandsSlider />
+        <Delivery />
       </MainContainer>
     </Layout>
   )
