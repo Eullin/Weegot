@@ -46,6 +46,7 @@ const Personal: FC<PersonalProps> = ({
         </Flex>
         <Flex flexGrow={1} borderBottom="solid 1px" mt={3}>
           <Input
+          placeholder="000-00-0000"
             type="number"
             label="Numero de seguridad social"
             value={socialNumber || ""}
@@ -53,10 +54,9 @@ const Personal: FC<PersonalProps> = ({
           />
         </Flex>
       </Flex>
-      
       <Flex>
         <Flex flexGrow={1} borderBottom="solid 1px" mt={3} mr={5}>
-            <Input type="phone" label="Teléfono" onChange={(e: any) => setFieldValue('phone', e.target.value)}/>
+            <Input type="tel" label="Teléfono" onChange={(e: any) => setFieldValue('phone', e.target.value)}/>
         </Flex>
         <Flex flexGrow={1} borderBottom="solid 1px" mt={3}>
         	<Input type="email" label="Email" value={email || ""} onChange={(e: any) => setFieldValue('email', e.target.value)}/>
