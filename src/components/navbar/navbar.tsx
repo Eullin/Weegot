@@ -13,8 +13,8 @@ type NavbarProps = {
 
 const MenuItems = [
   {
-    label: "Weegot Help",
-    url: "/page-2",
+    label: "Application Form",
+    url: "/application-form",
   },
   {
     label: "Contacto",
