@@ -19,8 +19,8 @@ const Button = styled.button`
   appearance: none;
   background: ${({ theme }) => theme.colors.brandAutos};
   border-radius: 1em;
-  width: 200px;
   height: 21px;
+  width: auto;
 `
 
 export default Button

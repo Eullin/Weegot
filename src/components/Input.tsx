@@ -15,11 +15,12 @@ import {
 } from 'styled-system';
 import styled from 'styled-components';
 
-export type InputProps = { label?: string, placeholder: string, value: string } & TypographyProps &
+export type InputProps = { label?: string, placeholder?: string, value: string } & TypographyProps &
   SpaceProps &
   LayoutProps &
   ColorProps &
-  BorderProps;
+  BorderProps &
+  InputHTMLAttributes<HTMLInputElement>;
 
 
 const StyledInput = styled.input<any>`
@@ -27,11 +28,9 @@ const StyledInput = styled.input<any>`
   border: none;
   margin: 0;
   text-decoration: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   font: inherit;
   width: auto;
-    
+
   &:focus {
     outline: none;
   }

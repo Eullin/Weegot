@@ -1,7 +1,7 @@
 import React, { FC } from "react"
 import PlainCard from "../../components/PlainCard"
 import { Container, HeroHeading, IMG, ButtonWrapp } from "./homepage.styles"
-import Button from "../../components/button"
+import Button from "../../components/Button"
 import { useStaticQuery, graphql } from "gatsby"
 
 interface HeroProps {
