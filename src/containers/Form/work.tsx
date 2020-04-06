@@ -9,10 +9,12 @@ import TextArea from "../../components/TextArea"
 type WorkProps = {
     values: any;
     setFieldValue: any;
+    onClick?: () => void;
+    coApplicant?: boolean;
     }
     
 
-const Work: FC <WorkProps> = ({ values, setFieldValue}) => {
+const Work: FC <WorkProps> = ({ values, setFieldValue, onClick, coApplicant}) => {
   return (
     <>
       <Heading textAlign="left" m={0}>
@@ -46,6 +48,25 @@ const Work: FC <WorkProps> = ({ values, setFieldValue}) => {
         <Input type="tel" label="Teléfono del trabajo" />
         <Input label="Ingresos mensuales ($)" />
       </Flex>
+     <TextArea p={0}>¿Co-Aplicante?</TextArea>
+            <Flex>
+              <Flex mr={2}>
+                <Input
+                  checked={coApplicant}
+                  type="checkbox"
+                  onClick={onClick}
+                />
+                <span>Si</span>
+              </Flex>
+              <Flex>
+                <Input
+                  checked={!coApplicant}
+                  type="checkbox"
+                  onClick={onClick}
+                />
+                <span>No</span>
+              </Flex>
+            </Flex>
     </>
   )
 }

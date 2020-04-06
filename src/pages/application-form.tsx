@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { useFormik } from "formik"
 import { FormBox } from "../containers/Form/form.styles"
@@ -6,8 +6,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Personal, Residence, Work } from "../containers/Form"
 import MainBox from "../components/MainBox"
+import Flex from "../components/Flex"
+import Input from "../components/Input"
+import TextArea from "../components/TextArea"
 
 const ApplicationForm = () => {
+  const [coApplicant, setCoApplicant] = useState(false)
+
+  const coApplicantHandler = () => setCoApplicant(prevState => !prevState)
+
   const {
     isValid,
     setValues,
@@ -87,7 +94,19 @@ const ApplicationForm = () => {
           <FormBox>
             <Personal values={values} setFieldValue={setFieldValue} />
             <Residence values={values} setFieldValue={setFieldValue} />
-            <Work values={values} setFieldValue={setFieldValue} />
+            <Work
+              values={values}
+              setFieldValue={setFieldValue}
+              coApplicant={coApplicant}
+              onClick={coApplicantHandler}
+            />
+            {coApplicant && (
+              <>
+                <Personal values={values} setFieldValue={setFieldValue} />
+                <Residence values={values} setFieldValue={setFieldValue} />
+                <Work values={values} setFieldValue={setFieldValue} />
+              </>
+            )}
           </FormBox>
         </form>
       </MainBox>
