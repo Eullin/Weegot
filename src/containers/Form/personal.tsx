@@ -3,31 +3,18 @@ import Heading from "../../components/Heading"
 import Input from "../../components/Input"
 import Button from "../../components/Button"
 import Flex from "../../components/Flex"
-import { FormBox } from "./form.styles"
 
 type PersonalProps = {
-  name: string
-  lastName: string
-  birthDate: string
-  socialNumber: string
-  phone: number
-  email: string
-  setFieldValue: any;
-  onClick: () => void
+values: any;
+setFieldValue: any;
 }
 
-const Personal: FC<PersonalProps> = ({
-  name,
-  lastName,
-  birthDate,
-  socialNumber,
-  phone,
-  email,
-  setFieldValue,
-  onClick = () => {},
-}) => {
+const Personal: FC<PersonalProps> = ({ values, setFieldValue }) => {
+
+  const { name, lastName, birthDate, socialNumber, email, phone } = values
+ const cierto = true
   return (
-    <FormBox>
+    <>
       <Heading textAlign="left" m={0}>
         Información personal
       </Heading>
@@ -62,10 +49,7 @@ const Personal: FC<PersonalProps> = ({
         	<Input type="email" label="Email" value={email || ""} onChange={(e: any) => setFieldValue('email', e.target.value)}/>
         </Flex>
       </Flex>
-      <Flex justifyContent="flex-end" mt={4} >
-          <Button onClick={onClick}>Next</Button>
-      </Flex>
-    </FormBox>
+    </>
   )
 }
 

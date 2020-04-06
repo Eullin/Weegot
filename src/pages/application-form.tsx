@@ -1,16 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { useFormik } from "formik"
-
+import { FormBox } from "../containers/Form/form.styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Personal, Residence, Work } from "../containers/Form"
 import MainBox from "../components/MainBox"
 
 const ApplicationForm = () => {
-  const [personalDone, setPersonalDone] = useState(false)
-  const [residenceDone, setResidenceDone] = useState(false)
-
   const {
     isValid,
     setValues,
@@ -26,42 +23,72 @@ const ApplicationForm = () => {
       socialNumber: "",
       email: "",
       phone: 123,
+
+      address: "",
+      city: "",
+      state: "",
+      zipCode: "",
+      residenceLessThan2: "",
+      residenceYears: "",
+      residenceMonths: "",
+      propertyType: "",
+      monthlyPayment: "",
+
+      workType: "enum",
+      employerName: "",
+      occupation: "",
+      employerAddress: "",
+      employerCity: "",
+      employerState: "",
+      employerZipCode: "",
+      timeWork: "",
+      workPhone: "",
+      monthlySalar: "",
+
+      CoApplicantName: "",
+      CoApplicantLastName: "",
+      CoApplicantBirthDate: "",
+      CoApplicantSocialNumber: "",
+      CoApplicantEmail: "",
+      CoApplicantPhone: 123,
+
+      CoApplicantAddress: "",
+      CoApplicantCity: "",
+      CoApplicantState: "",
+      CoApplicantZipCode: "",
+      CoApplicantResidenceLessThan2: "",
+      CoApplicantResidenceYears: "",
+      CoApplicantResidenceMonths: "",
+      CoApplicantPropertyType: "",
+      CoApplicantMonthlyPayment: "",
+
+      CoApplicantWorkType: "enum",
+      CoApplicantEmployerName: "",
+      CoApplicantOccupation: "",
+      CoApplicantEmployerAddress: "",
+      CoApplicantEmployerCity: "",
+      CoApplicantmEployerState: "",
+      CoApplicantEmployerZipCode: "",
+      CoApplicantIimeWork: "",
+      CoApplicantWorkPhone: "",
+      CoApplicantMonthlySalar: "",
     },
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2))
     },
   })
 
-  const personalHandler = () => {
-    setPersonalDone(true)
-  }
-
-  const residenceHandler = () => {
-    setResidenceDone(true)
-  }
-
   const { name, lastName, birthDate, socialNumber, email, phone } = values
   return (
     <Layout>
       <MainBox>
         <SEO title="Page two" />
-      <form name="contact" method="POST" data-netlify="true">
-        {residenceDone ? (
-          <Work />
-        ) : personalDone ? (
-          <Residence onClick={residenceHandler} />
-        ) : (
-          <Personal
-            name={name}
-            lastName={lastName}
-            birthDate={birthDate}
-            socialNumber={socialNumber}
-            email={email}
-            phone={phone}
-            onClick={personalHandler}
-            setFieldValue={setFieldValue}
-          />
-        )}
+        <form name="contact" method="POST" data-netlify="true">
+          <FormBox>
+            <Personal values={values} setFieldValue={setFieldValue} />
+            <Residence values={values} setFieldValue={setFieldValue} />
+            <Work values={values} setFieldValue={setFieldValue} />
+          </FormBox>
         </form>
       </MainBox>
     </Layout>
@@ -69,4 +96,3 @@ const ApplicationForm = () => {
 }
 
 export default ApplicationForm
-
