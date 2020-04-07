@@ -9,7 +9,8 @@ interface HeroProps {
 }
 
 const Hero: FC<HeroProps> = ({ nodes }) => {
-  console.log("data 8", nodes)
+  const image = nodes.filter((res: any) => res.fluid.originalName === "car.png")
+
   return (
     <>
       <PlainCard bg="secondaryBrand" p={3}>
@@ -24,7 +25,7 @@ const Hero: FC<HeroProps> = ({ nodes }) => {
           </HeroHeading>
           <div style={{ width: "100%", flexGrow: 1 }}>
         {nodes &&  <IMG
-              fluid={nodes[7].fluid}
+              fluid={image[0].fluid}
               position="relative"
               bottom={[6, 7, 8, 9]}
             />}
@@ -32,7 +33,7 @@ const Hero: FC<HeroProps> = ({ nodes }) => {
         </Container>
       </PlainCard>
       <ButtonWrapp>
-        <Button>Contáctanos</Button>
+        <Button onClick={() => console.log('clicked')} text={'Contáctanos'} />
       </ButtonWrapp>
     </>
   )

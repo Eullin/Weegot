@@ -12,7 +12,7 @@ import {
   LayoutProps,
   TypographyProps,
   ColorProps,
-  marginTop,
+  maxWidth,
 } from 'styled-system';
 
 type FlexProps = FlexboxProps &
@@ -39,7 +39,8 @@ const InnerBox = styled.div<FlexProps>`
   marginRight: 5,
   borderBottom:"solid 1px",
   flexGrow: 1,
-  marginTop: 3
+  marginTop: 3,
+  minWidth: "40%"
 }  
 
 export default InnerBox;

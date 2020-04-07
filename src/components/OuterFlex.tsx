@@ -34,8 +34,8 @@ const OuterFlex = styled.div<FlexProps>`
   }
 `;
 
-/* OuterFlex.defaultProps = {
-  marginRight: 5
-}  */
+/*  OuterFlex.defaultProps = {
+  flexGrow: 1
+}   */
 
 export default OuterFlex;

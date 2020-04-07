@@ -32,7 +32,7 @@ const Personal: FC<PersonalProps> = ({
 
   return (
     <>
-      <Heading textAlign="left" m={0}>
+      <Heading as="h2" textAlign="left">
         {coApplicant
           ? "Información personal del Co-aplicante"
           : "Información personal"}

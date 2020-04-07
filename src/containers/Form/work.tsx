@@ -20,7 +20,7 @@ const Work: FC<WorkProps> = ({
   onClick,
   coApplicant,
 }) => {
-  const [typeWork, setTypeWork] = useState()
+  const [typeWork, setTypeWork] = useState("otros")
 
   const {
     employerName,
@@ -51,7 +51,7 @@ const Work: FC<WorkProps> = ({
 
   return (
     <>
-      <Heading textAlign="left" m={0}>
+      <Heading as="h2" textAlign="left" m={0}>
         {coApplicant
           ? "Situación de empleo del Co-aplicante"
           : "Situación de empleo"}
@@ -70,7 +70,11 @@ const Work: FC<WorkProps> = ({
         </InnerBox>
         <InnerBox>
           <Input
-            label="Nombre del empleador actual"
+            label={
+              typeWork === "otros"
+                ? "Nombre del empleador actual"
+                : "Nombre de compañía"
+            }
             value={coApplicant ? CoApplicantEmployerName : employerName}
             onChange={(e: any) => {
               const field = coApplicant
@@ -85,7 +89,7 @@ const Work: FC<WorkProps> = ({
         <InnerBox>
           <Input
             type="text"
-            label="Ocupación"
+            label={typeWork === "otros" ? "Ocupación" : "Tipo de negocio"}
             value={coApplicant ? CoApplicantOccupation : occupation}
             onChange={(e: any) => {
               const field = coApplicant ? "CoApplicantOccupation" : "occupation"
@@ -96,7 +100,11 @@ const Work: FC<WorkProps> = ({
         <InnerBox>
           <Input
             type="text"
-            label="Dirección del empleador actual"
+            label={
+              typeWork === "otros"
+                ? "Dirección del empleador actual"
+                : "Dirección"
+            }
             value={coApplicant ? CoApplicantEmployerAddress : employerAddress}
             onChange={(e: any) => {
               const field = coApplicant
@@ -136,33 +144,25 @@ const Work: FC<WorkProps> = ({
         </InnerBox>
       </OuterFlex>
       <OuterFlex>
-        <Input
-          type="text"
-          label="Código postal"
-          value={coApplicant ? CoApplicantEmployerZipCode : employerZipCode}
-          onChange={(e: any) => {
-            const field = coApplicant
-              ? "CoApplicantEmployerZipCode"
-              : "employerZipCode"
-            setFieldValue(field, e.target.value)
-          }}
-        />
         <InnerBox>
           <Input
-            label="Años"
-            value={coApplicant ? CoApplicantWorkYears : workYears}
+            type="number"
+            label="Código postal"
+            value={coApplicant ? CoApplicantEmployerZipCode : employerZipCode}
             onChange={(e: any) => {
-              const field = coApplicant ? "CoApplicantWorkYears" : "workYears"
+              const field = coApplicant
+                ? "CoApplicantEmployerZipCode"
+                : "employerZipCode"
               setFieldValue(field, e.target.value)
             }}
           />
         </InnerBox>
         <InnerBox>
           <Input
-            label="Meses"
-            value={coApplicant ? CoApplicantWorkMonths : workMonths}
+            label="Años"
+            value={coApplicant ? CoApplicantWorkYears : workYears}
             onChange={(e: any) => {
-              const field = coApplicant ? "CoApplicantWorkMonths" : "workMonths"
+              const field = coApplicant ? "CoApplicantWorkYears" : "workYears"
               setFieldValue(field, e.target.value)
             }}
           />
@@ -193,17 +193,32 @@ const Work: FC<WorkProps> = ({
           />
         </InnerBox>
       </OuterFlex>
-      <TextArea>¿Co-aplicante?</TextArea>
-      <Flex>
-        <InnerBox flexGrow={0} borderBottom="none">
-          <Input checked={coApplicant} type="checkbox" onClick={onClick} />
-          <span>Si</span>
+      <OuterFlex>
+        <InnerBox maxWidth="40%">
+          <Input
+            label="Meses"
+            value={coApplicant ? CoApplicantWorkMonths : workMonths}
+            onChange={(e: any) => {
+              const field = coApplicant ? "CoApplicantWorkMonths" : "workMonths"
+              setFieldValue(field, e.target.value)
+            }}
+          />
         </InnerBox>
-        <InnerBox flexGrow={0} mx={3} borderBottom="none">
-          <Input checked={!coApplicant} type="checkbox" onClick={onClick} />
-          <span>No</span>
-        </InnerBox>
-      </Flex>
+        </OuterFlex>
+        <Flex flexDirection="column" minWidth="50%">
+          <Heading as="h3" textAlign="left">
+            ¿Co-aplicante?
+          </Heading>
+          <Flex mt={1}>
+            <Flex mr={3}>
+              <Input checked={coApplicant} type="checkbox" onClick={onClick} />
+              <Heading as="span" mt={0} pl={1}>Si</Heading>
+            </Flex>
+            <Input checked={!coApplicant} type="checkbox" onClick={onClick} />
+            <Heading as="span" mt={0} pl={1}>No</Heading>
+          </Flex>
+        </Flex>
+      
     </>
   )
 }

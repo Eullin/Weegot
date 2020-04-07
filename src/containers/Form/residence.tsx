@@ -56,7 +56,7 @@ const Residence: FC<ResidenceProps> = ({
 
   return (
     <>
-      <Heading textAlign="left" m={0}>
+      <Heading as="h2" textAlign="left" >
         {coApplicant ? "Dirección del Co-aplicante" : "Dirección"}
       </Heading>
       <OuterFlex>
@@ -129,28 +129,26 @@ const Residence: FC<ResidenceProps> = ({
           />
         </InnerBox>
       </OuterFlex>
-      <TextArea>¿Resides aquí por menos de 2 años?</TextArea>
+      <Heading as="h3" textAlign="left">¿Resides aquí por menos de 2 años?</Heading>
       <Flex>
-        <InnerBox borderBottom="none" flexGrow={0}>
+        <Flex mr={3}>
           <Input
             checked={lessThan2}
             type="checkbox"
             onClick={() => setLessThan2(prevState => !prevState)}
           />
-          <span>Si</span>
-        </InnerBox>
-        <InnerBox flexGrow={0} mx={3} borderBottom="none">
+          <Heading as="span" mt={0} pl={1}>Si</Heading>
+        </Flex>
           <Input
             checked={!lessThan2}
             type="checkbox"
             onClick={() => setLessThan2(prevState => !prevState)}
           />
-          <span>No</span>
-        </InnerBox>
+          <Heading as="span" mt={0} pl={1}>No</Heading>
       </Flex>
       {lessThan2 && (
         <>
-          <TextArea>Dirección anterior</TextArea>
+          <Heading as="h3" textAlign="left">Dirección anterior</Heading>
           <OuterFlex>
             <InnerBox>
               <Input label="Dirección" 
@@ -249,7 +247,7 @@ const Residence: FC<ResidenceProps> = ({
           </OuterFlex>
         </>
       )}
-      <TextArea>Dirección actual</TextArea>
+      <Heading as="h3" textAlign="left">Dirección actual</Heading>
       <OuterFlex>
         <InnerBox>
           <Input label="Años" 

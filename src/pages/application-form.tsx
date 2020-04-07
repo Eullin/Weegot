@@ -105,7 +105,7 @@ const ApplicationForm = () => {
         <SEO title="Page two" />
         <form name="contact" method="POST" data-netlify="true">
           <FormBox>
-            <Heading>Aplicación de crédito</Heading>
+            <Heading textAlign={["left", "center"]}>Aplicación de crédito</Heading>
             <Personal values={values} setFieldValue={setFieldValue} />
             <Residence values={values} setFieldValue={setFieldValue} />
             <Work
