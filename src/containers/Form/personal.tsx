@@ -5,48 +5,90 @@ import Button from "../../components/Button"
 import Flex from "../../components/Flex"
 
 type PersonalProps = {
-values: any;
-setFieldValue: any;
+  values: any
+  setFieldValue: any
+  coApplicant?: boolean
 }
 
-const Personal: FC<PersonalProps> = ({ values, setFieldValue }) => {
+const Personal: FC<PersonalProps> = ({
+  values,
+  setFieldValue,
+  coApplicant,
+}) => {
+  const { name, CoApplicantName, lastName, CoApplicantLastName, birthDate, CoApplicantBirthDate, socialNumber, CoApplicantSocialNumber, email, CoApplicantEmail, phone, CoApplicantPhone } = values
 
-  const { name, lastName, birthDate, socialNumber, email, phone } = values
- const cierto = true
   return (
     <>
       <Heading textAlign="left" m={0}>
-        Información personal
+        {coApplicant
+          ? "Información personal del Co-aplicante"
+          : "Información personal"}
       </Heading>
       <Flex>
         <Flex flexGrow={1} borderBottom="solid 1px" mr={5}>
-          <Input label="Nombres" value={name || ""} onChange={(e: any) => setFieldValue('name', e.target.value)}/>
+          <Input
+            label="Nombre"
+            value={coApplicant ? CoApplicantName : name}
+            onChange={(e: any) => {
+              const field = coApplicant ? "CoApplicantName" : "name"
+              setFieldValue(field, e.target.value)
+            }}
+          />
         </Flex>
         <Flex flexGrow={1} borderBottom="solid 1px">
-          <Input label="Apellidos" value={lastName || ""} onChange={(e: any) => setFieldValue('lastName', e.target.value)}/>
+          <Input
+            label="Apellido"
+            value={coApplicant ? CoApplicantLastName : lastName}
+            onChange={(e: any) => { 
+              const field = coApplicant ? "CoApplicantLastName" : "lastName"
+              setFieldValue(field, e.target.value)}}
+          />
         </Flex>
       </Flex>
 
       <Flex>
         <Flex flexGrow={1} borderBottom="solid 1px" mt={3} mr={5}>
-          <Input type="date" label="Fecha de nacimiento" value={birthDate || ""} onChange={(e: any) => setFieldValue('birthDate', e.target.value)}/>
+          <Input
+            type="date"
+            label="Fecha de nacimiento"
+            value={coApplicant ? CoApplicantBirthDate : birthDate}
+            onChange={(e: any) => {
+              const field = coApplicant ? "CoApplicantBirthDate" : "birthDate"
+              setFieldValue(field, e.target.value)}}
+          />
         </Flex>
         <Flex flexGrow={1} borderBottom="solid 1px" mt={3}>
           <Input
-          placeholder="000-00-0000"
+            placeholder="000-00-0000"
             type="number"
             label="Numero de seguridad social"
-            value={socialNumber || ""}
-            onChange={(e: any) => setFieldValue('socialNumber', e.target.value)}
+            value={coApplicant ? CoApplicantSocialNumber : socialNumber}
+            onChange={(e: any) => {
+              const field = coApplicant ? "CoApplicantSocialNumber" : "socialNumber"
+              setFieldValue(field, e.target.value)}}
           />
         </Flex>
       </Flex>
       <Flex>
         <Flex flexGrow={1} borderBottom="solid 1px" mt={3} mr={5}>
-            <Input type="tel" label="Teléfono" onChange={(e: any) => setFieldValue('phone', e.target.value)}/>
+          <Input
+            type="tel"
+            label="Teléfono"
+            value={coApplicant ? CoApplicantPhone : phone}
+            onChange={(e: any) => {
+              const field = coApplicant ? "CoApplicantPhone" : "phone"
+              setFieldValue(field, e.target.value)}}
+          />
         </Flex>
         <Flex flexGrow={1} borderBottom="solid 1px" mt={3}>
-        	<Input type="email" label="Email" value={email || ""} onChange={(e: any) => setFieldValue('email', e.target.value)}/>
+          <Input
+            type="email"
+            label="Email"
+            value={coApplicant ? CoApplicantEmail : email}
+            onChange={(e: any) =>{ 
+              const field = coApplicant ? "CoApplicantEmail" : "email"
+              setFieldValue(field, e.target.value)}}
+          />
         </Flex>
       </Flex>
     </>

@@ -15,7 +15,7 @@ import {
 } from 'styled-system';
 import styled from 'styled-components';
 
-export type InputProps = { label?: string, placeholder?: string, value: string } & TypographyProps &
+export type InputProps = { label?: string, placeholder?: string, value?: string } & TypographyProps &
   SpaceProps &
   LayoutProps &
   ColorProps &

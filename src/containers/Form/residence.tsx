@@ -1,5 +1,4 @@
 import React, { FC, useState } from "react"
-import Button from "../../components/Button"
 import Heading from "../../components/Heading"
 import Flex from "../../components/Flex"
 import Input from "../../components/Input"
@@ -8,41 +7,127 @@ import TextArea from "../../components/TextArea"
 type ResidenceProps = {
   values: any
   setFieldValue: any
+  coApplicant?: boolean
 }
 
-const Residence: FC<ResidenceProps> = ({ values, setFieldValue }) => {
+const Residence: FC<ResidenceProps> = ({
+  values,
+  setFieldValue,
+  coApplicant,
+}) => {
   const [lessThan2, setLessThan2] = useState(true)
-  console.log("values", values)
+
+  const {
+    address,
+    CoApplicantAddress,
+    CoApplicantCity,
+    city,
+    CoApplicantState,
+    state,
+    CoApplicantZipCode,
+    zipCode,
+    CoApplicantPropertyType,
+    propertyType,
+    CoApplicantMonthlyPayment,
+    monthlyPayment,
+    CoApplicantPreviousAddress,
+    previousAddress,
+    CoApplicantPreviousCity,
+    previousCity,
+    CoApplicantPreviousState,
+    previousState,
+    CoApplicantPreviousZipCode,
+    previousZipCode,
+    CoApplicantPreviousPropertyType,
+    CoApplicantPreviousResidenceYears,
+    CoApplicantPreviousResidenceMonths,
+    previousPropertyType,
+    previousResidenceYears,
+    previousResidenceMonths,
+    CoApplicantPreviousMonthlyPayment,
+    previousMonthlyPayment,
+    CoApplicantResidenceYears,
+    CoApplicantResidenceMonths,
+    residenceYears,
+    residenceMonths
+  } = values
+
   return (
     <>
       <Heading textAlign="left" m={0}>
-        Residencia
+        {coApplicant ? "Dirección del Co-aplicante" : "Dirección"}
       </Heading>
       <Flex display={["row", "column"]}>
         <Flex flexGrow={1} mr={5} borderBottom="solid 1px">
-          <Input label="Dirección" />
+          <Input
+            label="Dirección"
+            value={coApplicant ? CoApplicantAddress : address}
+            onChange={(e: any) => {
+              const field = coApplicant ? "CoApplicantAddress" : "address"
+              setFieldValue(field, e.target.value)
+            }}
+          />
         </Flex>
         <Flex flexGrow={1} borderBottom="solid 1px">
-          <Input label="Ciudad" />
+          <Input
+            label="Ciudad"
+            value={coApplicant ? CoApplicantCity : city}
+            onChange={(e: any) => {
+              const field = coApplicant ? "CoApplicantCity" : "city"
+              setFieldValue(field, e.target.value)
+            }}
+          />
         </Flex>
       </Flex>
       <Flex display={["row", "column"]} mt={3}>
         <Flex flexGrow={1} mr={5} borderBottom="solid 1px">
-          <Input label="Estado" />
+          <Input
+            label="Estado"
+            value={coApplicant ? CoApplicantState : state}
+            onChange={(e: any) => {
+              const field = coApplicant ? "CoApplicantState" : "state"
+              setFieldValue(field, e.target.value)
+            }}
+          />
         </Flex>
         <Flex flexGrow={1} borderBottom="solid 1px">
-          <Input label="Código postal" />
+          <Input
+            label="Código postal"
+            value={coApplicant ? CoApplicantZipCode : zipCode}
+            onChange={(e: any) => {
+              const field = coApplicant ? "CoApplicantZipCode" : "zipCode"
+              setFieldValue(field, e.target.value)
+            }}
+          />
         </Flex>
       </Flex>
       <Flex display={["row", "column"]} mt={3}>
         <Flex flexGrow={1} mr={5} borderBottom="solid 1px">
-          <Input label="Tipo de vivienda" />
+          <Input
+            label="Tipo de vivienda"
+            value={coApplicant ? CoApplicantPropertyType : propertyType}
+            onChange={(e: any) => {
+              const field = coApplicant
+                ? "CoApplicantPropertyType"
+                : "propertyType"
+              setFieldValue(field, e.target.value)
+            }}
+          />
         </Flex>
         <Flex flexGrow={1} borderBottom="solid 1px">
-          <Input label="Pago mensual ($)" />
+          <Input 
+          label="Pago mensual ($)" 
+          value={coApplicant ? CoApplicantMonthlyPayment : monthlyPayment}
+          onChange={(e: any) => {
+            const field = coApplicant
+              ? "CoApplicantMonthlyPayment"
+              : "monthlyPayment"
+            setFieldValue(field, e.target.value)
+          }}
+          />
         </Flex>
       </Flex>
-      <TextArea p={0}>¿Resides aquí por menos de 2 años?</TextArea>
+      <TextArea>¿Resides aquí por menos de 2 años?</TextArea>
       <Flex>
         <Flex mr={2}>
           <Input
@@ -63,48 +148,128 @@ const Residence: FC<ResidenceProps> = ({ values, setFieldValue }) => {
       </Flex>
       {lessThan2 && (
         <>
-          <TextArea p={0}>Dirección anterior</TextArea>
+          <TextArea>Dirección anterior</TextArea>
           <Flex>
             <Flex flexGrow={1} mr={5} borderBottom="solid 1px">
-              <Input label="Dirección" />
+              <Input label="Dirección" 
+              value={coApplicant ? CoApplicantPreviousAddress : previousAddress}
+              onChange={(e: any) => {
+                const field = coApplicant
+                  ? "CoApplicantPreviousAddress"
+                  : "previousAddress"
+                setFieldValue(field, e.target.value)
+              }}
+              />
             </Flex>
             <Flex flexGrow={1} borderBottom="solid 1px">
-              <Input label="Ciudad" />
+              <Input label="Ciudad" 
+               value={coApplicant ? CoApplicantPreviousCity : previousCity}
+               onChange={(e: any) => {
+                 const field = coApplicant
+                   ? "CoApplicantPreviousCity"
+                   : "previousCity"
+                 setFieldValue(field, e.target.value)
+               }}
+              />
             </Flex>
           </Flex>
           <Flex display={["row", "column"]} mt={3}>
-        <Flex flexGrow={1} mr={5} borderBottom="solid 1px">
-          <Input label="Estado" />
-        </Flex>
-        <Flex flexGrow={1} borderBottom="solid 1px">
-          <Input label="Código postal" />
-        </Flex>
-      </Flex>
-      <Flex display={["row", "column"]} mt={3}>
-        <Flex flexGrow={1} mr={5} borderBottom="solid 1px">
-          <Input label="Tipo de vivienda" />
-        </Flex>
-        <Flex flexGrow={1} borderBottom="solid 1px">
-          <Input label="Pago mensual ($)" />
-        </Flex>
-      </Flex>
-      <Flex>
-        <Flex flexGrow={1} borderBottom="solid 1px" mr={5}>
-          <Input label="Años" />
-        </Flex>
-        <Flex flexGrow={1} borderBottom="solid 1px">
-          <Input label="Meses" />
-        </Flex>
-      </Flex>
+            <Flex flexGrow={1} mr={5} borderBottom="solid 1px">
+              <Input label="Estado" 
+                value={coApplicant ? CoApplicantPreviousState : previousState}
+                onChange={(e: any) => {
+                  const field = coApplicant
+                    ? "CoApplicantPreviousState"
+                    : "previousState"
+                  setFieldValue(field, e.target.value)
+                }}
+              />
+            </Flex>
+            <Flex flexGrow={1} borderBottom="solid 1px">
+              <Input label="Código postal" 
+                 value={coApplicant ? CoApplicantPreviousZipCode : previousZipCode}
+                 onChange={(e: any) => {
+                   const field = coApplicant
+                     ? "CoApplicantPreviousZipCode"
+                     : "previousZipCode"
+                   setFieldValue(field, e.target.value)
+                 }}
+              />
+            </Flex>
+          </Flex>
+          <Flex display={["row", "column"]} mt={3}>
+            <Flex flexGrow={1} mr={5} borderBottom="solid 1px">
+              <Input label="Tipo de vivienda" 
+                  value={coApplicant ? CoApplicantPreviousPropertyType : previousPropertyType}
+                  onChange={(e: any) => {
+                    const field = coApplicant
+                      ? "CoApplicantPreviousPropertyType"
+                      : "previousPropertyType"
+                    setFieldValue(field, e.target.value)
+                  }}
+              />
+            </Flex>
+            <Flex flexGrow={1} borderBottom="solid 1px">
+              <Input label="Pago mensual ($)" 
+                value={coApplicant ? CoApplicantPreviousMonthlyPayment : previousMonthlyPayment}
+                onChange={(e: any) => {
+                  const field = coApplicant
+                    ? "CoApplicantPreviousMonthlyPayment"
+                    : "previousMonthlyPayment"
+                  setFieldValue(field, e.target.value)
+                }}
+              />
+            </Flex>
+          </Flex>
+          <Flex>
+            <Flex flexGrow={1} borderBottom="solid 1px" mr={5}>
+              <Input label="Años" 
+                   value={coApplicant ? CoApplicantPreviousResidenceYears : previousResidenceYears}
+                   onChange={(e: any) => {
+                     const field = coApplicant
+                       ? "CoApplicantPreviousResidenceYears"
+                       : "previousResidenceYears"
+                     setFieldValue(field, e.target.value)
+                   }}
+              />
+            </Flex>
+            <Flex flexGrow={1} borderBottom="solid 1px">
+              <Input label="Meses" 
+                  value={coApplicant ? CoApplicantPreviousResidenceMonths : previousResidenceMonths}
+                  onChange={(e: any) => {
+                    const field = coApplicant
+                      ? "CoApplicantPreviousResidenceMonths"
+                      : "previousResidenceMonths"
+                    setFieldValue(field, e.target.value)
+                  }}
+              />
+            </Flex>
+          </Flex>
         </>
       )}
-      <TextArea p={0}>Dirección actual</TextArea>
+      <TextArea>Dirección actual</TextArea>
       <Flex>
         <Flex flexGrow={1} borderBottom="solid 1px" mr={5}>
-          <Input label="Años" />
+          <Input label="Años" 
+              value={coApplicant ? CoApplicantResidenceYears : residenceYears}
+              onChange={(e: any) => {
+                const field = coApplicant
+                  ? "CoApplicantResidenceYears"
+                  : "residenceYears"
+                setFieldValue(field, e.target.value)
+              }}
+          />
         </Flex>
         <Flex flexGrow={1} borderBottom="solid 1px">
-          <Input label="Meses" />
+          <Input label="Meses" 
+            value={coApplicant ? CoApplicantResidenceMonths : residenceMonths}
+            onChange={(e: any) => {
+              const field = coApplicant
+                ? "CoApplicantResidenceMonths"
+                : "residenceMonths"
+              setFieldValue(field, e.target.value)
+            }}
+          />
         </Flex>
       </Flex>
     </>

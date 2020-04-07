@@ -1,14 +1,12 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
 import { useFormik } from "formik"
 import { FormBox } from "../containers/Form/form.styles"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Personal, Residence, Work } from "../containers/Form"
 import MainBox from "../components/MainBox"
-import Flex from "../components/Flex"
-import Input from "../components/Input"
-import TextArea from "../components/TextArea"
+import Heading from "../components/Heading"
+import Button from "../components/Button"
 
 const ApplicationForm = () => {
   const [coApplicant, setCoApplicant] = useState(false)
@@ -35,11 +33,18 @@ const ApplicationForm = () => {
       city: "",
       state: "",
       zipCode: "",
-      residenceLessThan2: "",
       residenceYears: "",
       residenceMonths: "",
       propertyType: "",
       monthlyPayment: "",
+      previousAddress: "",
+      previousCity: "",
+      previousState: "",
+      previousZipCode: "",
+      previousPropertyType: "",
+      previousResidenceYears: "",
+      previousResidenceMonths: "",
+      previousMonthlyPayment: "",
 
       workType: "enum",
       employerName: "",
@@ -48,9 +53,10 @@ const ApplicationForm = () => {
       employerCity: "",
       employerState: "",
       employerZipCode: "",
-      timeWork: "",
+      workMonths: "",
+      workYears: "",
       workPhone: "",
-      monthlySalar: "",
+      monthlySalary: "",
 
       CoApplicantName: "",
       CoApplicantLastName: "",
@@ -63,11 +69,18 @@ const ApplicationForm = () => {
       CoApplicantCity: "",
       CoApplicantState: "",
       CoApplicantZipCode: "",
-      CoApplicantResidenceLessThan2: "",
       CoApplicantResidenceYears: "",
       CoApplicantResidenceMonths: "",
       CoApplicantPropertyType: "",
       CoApplicantMonthlyPayment: "",
+      CoApplicantPreviousAddress: "",
+      CoApplicantPreviousCity: "",
+      CoApplicantPreviousState: "",
+      CoApplicantPreviousZipCode: "",
+      CoApplicantPreviousPropertyType: "",
+      CoApplicantPreviousResidenceYears: "",
+      CoApplicantPreviousResidenceMonths: "",
+      CoApplicantPreviousMonthlyPayment: "",
 
       CoApplicantWorkType: "enum",
       CoApplicantEmployerName: "",
@@ -76,22 +89,23 @@ const ApplicationForm = () => {
       CoApplicantEmployerCity: "",
       CoApplicantmEployerState: "",
       CoApplicantEmployerZipCode: "",
-      CoApplicantIimeWork: "",
+      CoApplicantWorkMonths: "",
+      CoApplicantWorkYears: "",
       CoApplicantWorkPhone: "",
-      CoApplicantMonthlySalar: "",
+      CoApplicantMonthlySalary: "",
     },
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+      console.log(JSON.stringify(values, null, 2))
     },
   })
 
-  const { name, lastName, birthDate, socialNumber, email, phone } = values
   return (
     <Layout>
       <MainBox>
         <SEO title="Page two" />
         <form name="contact" method="POST" data-netlify="true">
           <FormBox>
+            <Heading>Aplicación de crédito</Heading>
             <Personal values={values} setFieldValue={setFieldValue} />
             <Residence values={values} setFieldValue={setFieldValue} />
             <Work
@@ -102,11 +116,12 @@ const ApplicationForm = () => {
             />
             {coApplicant && (
               <>
-                <Personal values={values} setFieldValue={setFieldValue} />
-                <Residence values={values} setFieldValue={setFieldValue} />
-                <Work values={values} setFieldValue={setFieldValue} />
+                <Personal values={values} setFieldValue={setFieldValue} coApplicant={coApplicant}/>
+                <Residence values={values} setFieldValue={setFieldValue} coApplicant={coApplicant}/>
+                <Work values={values} setFieldValue={setFieldValue} coApplicant={coApplicant}/>
               </>
             )}
+            <Button onClick={handleSubmit} text="Enviar" />
           </FormBox>
         </form>
       </MainBox>
