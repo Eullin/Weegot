@@ -3,16 +3,16 @@ import styled from "styled-components"
 type NavBarProps = { show: boolean }
 
 const Navbar = styled.header`
-background-color: white;
-position: -webkit-sticky;
-position: sticky;
-top: 0;
-z-index: 999;
+  background-color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 `
 
 export const HeaderWrapper = styled(Navbar)<NavBarProps>`
-transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
-border-bottom: ${props => (props.show ? '' : 'solid 1px rgba(0, 0, 0, 0.2)')};
+  transition: all 200ms ${props => (props.show ? "ease-in" : "ease-out")};
+  border-bottom: ${props => (props.show ? "" : "solid 1px rgba(0, 0, 0, 0.2)")};
 `
 
 export const NavbarWrapper = styled.div<NavBarProps>`
@@ -57,8 +57,9 @@ export const MenuWrapper = styled.div`
 export const MenuItemWrapper = styled.ul`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: left;
   margin-left: auto;
+  margin-top: 2rem;
   @media (max-width: ${({ theme }) => theme.breakpoints[2]}) {
     flex-direction: column;
   }
@@ -170,7 +171,6 @@ export const HamburgerIcon = styled.div`
   }
 `
 export default HeaderWrapper
-
 
 /* 
 export const NavbarWrapper = styled.div`

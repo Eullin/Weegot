@@ -14,13 +14,7 @@ type MenuItemsProps = {
 }
 
 const Menu: FC<MenuProps> = ({ items, className, ...props }) => {
-  // Add all classs to an array
-  const addAllClasses = ["menu"]
 
-  // className prop checking
-  if (className) {
-    addAllClasses.push(className)
-  }
   return (
     <MenuItemWrapper>
       {items.map((item, index) => (
