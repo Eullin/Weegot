@@ -19,15 +19,15 @@ type MobileMenuProps = {
 }
 
 const MobileMenu: FC<MobileMenuProps> = ({ items, logo, ...props }) => {
-  const { state, dispatch }: any = useContext(DrawerContext)
+  const { isOpen, toggle } = useContext(DrawerContext)
 
-  // Toggle drawer
+/*   // Toggle drawer
   const toggleDrawer = () => {
     dispatch({
       type: "TOGGLE",
     })
   }
-
+ */
   return (
     <MobileMenuWrapper {...props}>
       <Drawer
@@ -40,8 +40,8 @@ const MobileMenu: FC<MobileMenuProps> = ({ items, logo, ...props }) => {
             <span />
           </HamburgerIcon>
         }
-        open={state.isOpen}
-        toggleHandler={toggleDrawer}
+        open={isOpen}
+        toggleHandler={toggle}
       >
         <DrawerContentWrapper>
           <DrawerHead>
@@ -50,7 +50,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ items, logo, ...props }) => {
                 <img src={logo} alt="logo" />
               </Link>
             </DrawerLogo>
-            <DrawerClose onClick={toggleDrawer}>
+            <DrawerClose onClick={toggle}>
               <FiX />
             </DrawerClose>
           </DrawerHead>

@@ -1,31 +1,26 @@
-import React, { useReducer, FC } from "react"
+import React, { FC, createContext, useState } from "react"
 
-const initialState = {
+interface IDrawerType {
+  isOpen: boolean;
+  toggle: () => void;
+}
+
+export const DrawerContext = createContext<IDrawerType>({
   isOpen: false,
-}
+  toggle: () => {},
+})
 
-function reducer(state: any, action: any) {
-  switch (action.type) {
-    case "TOGGLE":
-      return {
-        ...state,
-        isOpen: !state.isOpen,
-      }
-    default:
-      return state
+export const DrawerProvider: FC = ( props ) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+const toggle = () => setIsOpen(prevProps => !prevProps)
+
+  const value = {
+    isOpen,
+    toggle,
   }
-}
-export const DrawerContext = React.createContext({})
 
-type DrawerProviderProps = {
-  children: any
-}
-
-export const DrawerProvider: FC<DrawerProviderProps> = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
   return (
-    <DrawerContext.Provider value={{ state, dispatch }}>
-      {children}
-    </DrawerContext.Provider>
+    <DrawerContext.Provider value={value} {...props} />
   )
 }

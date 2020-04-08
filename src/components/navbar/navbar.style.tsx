@@ -1,11 +1,21 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
-const HeaderWrapper = styled.header`
-  position: relative;
- 
+type NavBarProps = { show: boolean }
+
+const Navbar = styled.header`
+background-color: white;
+position: -webkit-sticky;
+position: sticky;
+top: 0;
+z-index: 999;
 `
 
-export const NavbarWrapper = styled.div`
+export const HeaderWrapper = styled(Navbar)<NavBarProps>`
+transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
+border-bottom: ${props => (props.show ? '' : 'solid 1px rgba(0, 0, 0, 0.2)')};
+`
+
+export const NavbarWrapper = styled.div<NavBarProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,10 +26,10 @@ export const NavbarWrapper = styled.div`
     padding: 25px 45px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints[1]}) {
-    padding: 15px 25px;
+    padding: 2rem 3rem 1rem;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
-    padding: 3px 15px;
+    padding: 2rem 3rem 1rem;
   }
 `
 
