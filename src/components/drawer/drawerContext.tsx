@@ -10,11 +10,6 @@ export const DrawerContext = createContext<IDrawerType>({
   toggle: () => {},
 })
 
-/* type DrawerProviderProps = {
-  children: any
-} 
- */
-
 export const DrawerProvider: FC = ( props ) => {
   const [isOpen, setIsOpen] = useState(false)
 

@@ -1,7 +1,13 @@
+import React , {FC}  from 'react'
 import styled from "styled-components"
 import { color, typography, space, layout } from "styled-system"
 
-const Button = styled.button`
+type ButtonProps = {
+  onClick: () => void;
+  text: string;
+} 
+
+const StyledButton = styled.button`
   ${color}
   ${typography}
   ${space}
@@ -19,8 +25,16 @@ const Button = styled.button`
   appearance: none;
   background: ${({ theme }) => theme.colors.brandAutos};
   border-radius: 1em;
-  width: 200px;
   height: 21px;
+  width: auto;
 `
+
+const Button: FC<ButtonProps> = ({ onClick, text }) => {
+ return (
+ <StyledButton onClick={onClick}>
+   {text}
+   </StyledButton>
+ )
+}
 
 export default Button

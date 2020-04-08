@@ -12,7 +12,7 @@ color: ${({ theme }) => theme.colors.white}
   padding: 3rem;
   text-align: center;
     a {
-    padding: 2rem;
+    padding: 2rem 1rem;
     padding-bottom: 20px;
     color: ${({ theme }) => theme.colors.white}
     text-decoration: none;
