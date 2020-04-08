@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const HeaderWrapper = styled.header`
   position: relative;
-  transition: 0.25s ease-in-out;
+ 
 `
 
 export const NavbarWrapper = styled.div`
@@ -160,3 +160,24 @@ export const HamburgerIcon = styled.div`
   }
 `
 export default HeaderWrapper
+
+
+/* 
+export const NavbarWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 75px;
+  background-color: #fff;
+  transition: 0.25s ease-in-out;
+  @media (max-width: ${({ theme }) => theme.breakpoints[3]}) {
+    padding: 25px 45px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints[1]}) {
+    padding: 15px 25px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    padding: 3px 15px;
+  }
+`
+*/
