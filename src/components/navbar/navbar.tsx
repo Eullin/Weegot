@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useEffect, useRef, useState } from "react"
+import React, { FC, Fragment, useEffect, useRef, useState, useMemo } from "react"
 import { Link } from "gatsby"
 import { IoIosSearch, IoIosClose } from "react-icons/io"
 import { DrawerProvider } from "../drawer/drawerContext"
@@ -6,7 +6,7 @@ import Menu from "./menu"
 import MobileMenu from "./mobileMenu"
 import HeaderWrapper, { NavbarWrapper, Logo, MenuWrapper } from "./navbar.style"
 import LogoImage from "../../images/weegot-logo.png"
-import Flex from "../Flex"
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 type NavbarProps = {
   className?: string
@@ -23,32 +23,28 @@ const MenuItems = [
   },
 ]
 
-const Navbar: FC<NavbarProps> = ({ className, ...props }) => {
-  /*   const [isSticky, setSticky] = useState(false);
-  const ref = useRef(null);
-  console.log(ref)
-  const [state, setState] = useState({
-    toggle: false,
-  })
+const Navbar: FC<NavbarProps> = ({ className }) => {
+  const [hideOnScroll, setHideOnScroll] = useState(true)
 
-   const handleScroll = () => {
-    setSticky(ref.current.getBoundingClientRect().top <= 0);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', () => handleScroll);
-    };
-  }, []); */
-
-  return (
-    <HeaderWrapper>
-      <NavbarWrapper>
-        <DrawerProvider>
-          <MobileMenu items={MenuItems} logo={LogoImage} />
-        </DrawerProvider>
+  console.log(hideOnScroll);
+  
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y > prevPos.y
+      if (isShow !== hideOnScroll) setHideOnScroll(isShow)
+    },
+    [hideOnScroll],
+    false,
+    false,
+    300
+  )
+  return useMemo(
+    () => (
+      <HeaderWrapper show={hideOnScroll}>
+        <NavbarWrapper show={hideOnScroll}>
+          <DrawerProvider>
+            <MobileMenu items={MenuItems} logo={LogoImage} />
+          </DrawerProvider>
           <Logo>
             <Link to="/">
               <img src={LogoImage} alt="logo" />
@@ -57,8 +53,10 @@ const Navbar: FC<NavbarProps> = ({ className, ...props }) => {
           <MenuWrapper>
             <Menu items={MenuItems} />
           </MenuWrapper>
-      </NavbarWrapper>
-    </HeaderWrapper>
+        </NavbarWrapper>
+      </HeaderWrapper>
+  ),
+  [hideOnScroll]
   )
 }
 
