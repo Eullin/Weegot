@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { BackgroundBox, CardContainer, Icon, CtaLink } from "./homepage.styles"
 import Heading from "../../components/Heading"
 import PlainCard from "../../components/PlainCard"
@@ -6,27 +6,23 @@ import Paragraph from "../../components/Paragraph"
 import { useStaticQuery, graphql } from "gatsby"
 import theme from "../../theme"
 
-const Process = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allImageSharp {
-        nodes {
-          fluid(maxWidth: 300) {
-            originalName
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+
+interface ProcessProps {
+  nodes: any;
+}
+
+const Process: FC<ProcessProps> = ({ nodes }) => {
+  const icons = nodes.filter((res: any) => res.fluid.originalName.startsWith("web-icons"))
+
+
   return (
     <BackgroundBox backgroundColor={theme.colors.background}>
-      <Heading as="h2"  fontWeight={400} color="textColor">
+      <Heading  mb={4} mt={4}>
         Nuestro Proceso
       </Heading>
-      <CardContainer flexDirection={["column", "row"]}>
-        <PlainCard p={4} textAlign={["center", "left"]}>
-          <Icon fluid={data.allImageSharp.nodes[3].fluid} />
+      <CardContainer flexDirection={["column", "row"]} >
+        <PlainCard p={4} textAlign={["center", "left"]} m={2} borderRadius="14px">
+          <Icon fluid={icons[0].fluid} />
           <Heading textAlign={["center", "left"]} as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
             Asesoría
           </Heading>
@@ -36,8 +32,8 @@ const Process = () => {
           </Paragraph>
           <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
         </PlainCard>
-        <PlainCard p={4} textAlign={["center", "left"]}>
-          <Icon fluid={data.allImageSharp.nodes[4].fluid} />
+        <PlainCard p={4} textAlign={["center", "left"]} m={2} borderRadius="14px">
+          <Icon fluid={icons[1].fluid} />
           <Heading textAlign={["center", "left"]} as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
             Gestión
           </Heading>
@@ -47,8 +43,8 @@ const Process = () => {
           </Paragraph>
           <CtaLink to="/contacto">Comenzar ahora →</CtaLink>
         </PlainCard>
-        <PlainCard p={4} textAlign={["center", "left"]}>
-          <Icon fluid={data.allImageSharp.nodes[5].fluid} />
+        <PlainCard p={4} textAlign={["center", "left"]} m={2} borderRadius="14px">
+          <Icon fluid={icons[2].fluid} />
           <Heading textAlign={["center", "left"]} as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
             Delivery
           </Heading>

@@ -8,12 +8,15 @@ import {
   SpaceProps,
   typography,
   TypographyProps,
+  border,
+  BorderProps,
 } from "styled-system"
 
 type plainCardProps = ColorProps &
   BackgroundProps &
   SpaceProps &
-  TypographyProps
+  TypographyProps & 
+  BorderProps
 
 const PlainCard = styled.div.attrs(props => ({
   bg: "#fff",
@@ -24,11 +27,8 @@ const PlainCard = styled.div.attrs(props => ({
   ${color}
   ${background}
   ${space}
-  margin: 0.6rem;
-  border-radius: 14px;
-  width: 100%;
+  ${border}
   box-shadow: 0 2px 6px 0 rgba(41,41,43,.07);
-
 `
 
 export default PlainCard
