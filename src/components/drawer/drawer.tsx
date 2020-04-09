@@ -37,7 +37,7 @@ const Drawer: FC<DrawerProps> = ({
     <>
       <RcDrawer
         open={open}
-        onMaskClick={toggleHandler}
+        onClose={toggleHandler}
         className={addAllClasses.join(" ")}
         width={width}
         placement={placement}
