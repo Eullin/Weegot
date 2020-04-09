@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
+
 import {
   flexbox,
   position,
@@ -17,7 +18,7 @@ import {
 } from "styled-system"
 
 export type HeadingProps = SpaceProps & LayoutProps & TypographyProps
-
+export type ButtonWrappProps = LayoutProps & TypographyProps & SpaceProps
 export type ContainerProps = FlexboxProps & LayoutProps & SpaceProps
 export type ImgProps = PositionProps & SpaceProps
 export type BackgroundBoxProps = FlexboxProps & ColorProps & SpaceProps
@@ -33,7 +34,11 @@ export const Icon = styled(Img)<SpaceProps>`
 
 export const ImgContainer = styled.div`
   margin: 2rem auto;
-`
+  `
+
+  const Circle = styled.img`
+  height: 20px;
+  `
 
 export const Container = styled.div<ContainerProps>`
   display: flex;
@@ -41,18 +46,18 @@ export const Container = styled.div<ContainerProps>`
   ${space}
   ${flexbox}
   ${layout}
+
    @media (max-width: ${({ theme }) => theme.breakpoints[0]})  {
     padding:0  1rem;
   }
 `
 
-export const ButtonWrapp = styled.div`
-  text-align: center;
-  margin: 1.5rem 0;
-  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-    display: none;
-  }
+export const ButtonWrapp = styled.div<ButtonWrappProps>`
+  ${layout}
+  ${typography}
+  ${space}
 `
+
 
 export const BackgroundBox = styled.div<BackgroundBoxProps>`
   ${color}
@@ -98,7 +103,8 @@ export const HeroHeading = styled.h1.attrs<SpaceProps>(props => ({
   ${space}
   ${typography}
   ${color}
-    @media (min-width: 900px) {
+
+  @media (min-width: 900px) {
     font-size: 2.5rem;
   };
     @media (min-width: 1000px) {

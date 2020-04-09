@@ -1,13 +1,13 @@
 import React , {FC}  from 'react'
 import styled from "styled-components"
-import { color, typography, space, layout } from "styled-system"
+import { color, typography, space, layout, LayoutProps } from "styled-system"
 
 type ButtonProps = {
   onClick: () => void;
   text: string;
-} 
+} & LayoutProps
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<LayoutProps>`
   ${color}
   ${typography}
   ${space}
@@ -18,16 +18,18 @@ const StyledButton = styled.button`
   margin: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
-  font-size: 1rem;
-  line-height: 1;
+  font-size: 1.2rem;
   cursor: pointer;
   text-align: center;
   appearance: none;
   background: ${({ theme }) => theme.colors.brandAutos};
   border-radius: 1em;
-  height: 21px;
-  width: auto;
 `
+
+StyledButton.defaultProps = {
+  height: '26px',
+  width: '200px'
+}
 
 const Button: FC<ButtonProps> = ({ onClick, text }) => {
  return (

@@ -23,10 +23,10 @@ const Process: FC<ProcessProps> = ({ nodes }) => {
       <CardContainer flexDirection={["column", "row"]} >
         <PlainCard p={4} textAlign={["center", "left"]} m={2} borderRadius="14px">
           <Icon fluid={icons[0].fluid} />
-          <Heading textAlign={["center", "left"]} as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
+          <Heading textAlign={["center", "left"]} as="h2" mt={2} mb={2} fontSize={8} >
             Asesoría
           </Heading>
-          <Paragraph fontSize={7} color="lightTextColor">
+          <Paragraph fontSize={7}>
             Esta nos brindará toda la información necesaria para conocer tu
             situación y tus posibilidades
           </Paragraph>
@@ -34,10 +34,10 @@ const Process: FC<ProcessProps> = ({ nodes }) => {
         </PlainCard>
         <PlainCard p={4} textAlign={["center", "left"]} m={2} borderRadius="14px">
           <Icon fluid={icons[1].fluid} />
-          <Heading textAlign={["center", "left"]} as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
+          <Heading textAlign={["center", "left"]} as="h2" mt={2} mb={2} fontSize={8} >
             Gestión
           </Heading>
-          <Paragraph fontSize={7} color="lightTextColor">
+          <Paragraph fontSize={7}>
             Esta nos brindará toda la información necesaria para conocer tu
             situación y tus posibilidades
           </Paragraph>
@@ -45,10 +45,10 @@ const Process: FC<ProcessProps> = ({ nodes }) => {
         </PlainCard>
         <PlainCard p={4} textAlign={["center", "left"]} m={2} borderRadius="14px">
           <Icon fluid={icons[2].fluid} />
-          <Heading textAlign={["center", "left"]} as="h2" mt={2} mb={2} fontSize={8} color="secondaryBrand">
+          <Heading textAlign={["center", "left"]} as="h2" mt={2} mb={2} fontSize={8} >
             Delivery
           </Heading>
-          <Paragraph fontSize={7} color="lightTextColor">
+          <Paragraph fontSize={7}>
             Esta nos brindará toda la información necesaria para conocer tu
             situación y tus posibilidades
           </Paragraph>
