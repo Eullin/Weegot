@@ -19,7 +19,7 @@ const MenuItems = [
   },
   {
     label: "Contacto",
-    url: "/",
+    url: "/contacto",
   },
 ]
 
