@@ -14,7 +14,7 @@ color: ${({ theme }) => theme.colors.white}
     a {
     padding: 2rem 1rem;
     padding-bottom: 20px;
-    color: ${({ theme }) => theme.colors.white}
+    color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
   }
 `
