@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { color, typography, space, layout, LayoutProps } from "styled-system"
 
 type ButtonProps = {
-  onClick: () => void;
+  onClick?: () => void;
   type: string;
   text: string;
 } & LayoutProps
