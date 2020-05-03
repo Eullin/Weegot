@@ -104,7 +104,7 @@ const ApplicationForm = () => {
     <Layout>
       <MainBox>
         <SEO title="Page two" />
-        <form onClick={handleSubmit} name="application-form" method="post" netlify-honeypot="bot-field" data-netlify="true">
+        <form name="applicationForm" method="post" netlify-honeypot="bot-field" data-netlify="true">
         <input type="hidden" name="bot-field" />
           <FormBox>
             <Heading textAlign={["left", "center"]}>Aplicación de crédito</Heading>
@@ -123,7 +123,7 @@ const ApplicationForm = () => {
                 <Work values={values} setFieldValue={setFieldValue} coApplicant={coApplicant}/>
               </>
             )}
-            <Flex justifyContent="center" m={3}><Button type="submit" text="Enviar" /></Flex>
+            <Flex justifyContent="center" m={3}><Button type="submit" text="Enviar" onClick={handleSubmit} /></Flex>
           </FormBox>
         </form>
       </MainBox>
