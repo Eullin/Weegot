@@ -6,7 +6,6 @@ export type HeadingProps = SpaceProps & LayoutProps & TypographyProps
 
  const Heading = styled.h1.attrs<SpaceProps>(props => ({
   mt: 4,
-  mb: 1,
   fontWeight: 500,
   textAlign:"center",
   ...props,

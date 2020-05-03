@@ -205,8 +205,8 @@ const Work: FC<WorkProps> = ({
           />
         </InnerBox>
         </OuterFlex>
-        <Flex flexDirection="column" minWidth="50%">
-          <Heading as="h3" textAlign="left">
+        <Flex flexDirection="column" minWidth="50%" paddingY={3}>
+          <Heading as="h3" textAlign="left" paddingBottom={3}>
             ¿Co-aplicante?
           </Heading>
           <Flex mt={1}>

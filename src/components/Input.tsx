@@ -53,7 +53,7 @@ const StyledLabel = styled.label<SpaceProps>`
 const Input: FC<InputProps> = ({ label, placeholder, value, width, ...props }) => {
   return (
     <div>
-      {label && <StyledLabel>{label}</StyledLabel>}
+      {label && <StyledLabel paddingY={3}>{label}</StyledLabel>}
       <StyledInput
         data-testid="input"
         p={7}

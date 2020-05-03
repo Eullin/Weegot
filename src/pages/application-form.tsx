@@ -7,6 +7,7 @@ import { Personal, Residence, Work } from "../containers/Form"
 import MainBox from "../components/MainBox"
 import Heading from "../components/Heading"
 import Button from "../components/Button"
+import Flex from "../components/Flex"
 
 const ApplicationForm = () => {
   const [coApplicant, setCoApplicant] = useState(false)
@@ -121,7 +122,7 @@ const ApplicationForm = () => {
                 <Work values={values} setFieldValue={setFieldValue} coApplicant={coApplicant}/>
               </>
             )}
-            <Button onClick={handleSubmit} text="Enviar" />
+            <Flex justifyContent="center" m={3}><Button onClick={handleSubmit} text="Enviar" /></Flex>
           </FormBox>
         </form>
       </MainBox>

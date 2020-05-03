@@ -129,7 +129,7 @@ const Residence: FC<ResidenceProps> = ({
           />
         </InnerBox>
       </OuterFlex>
-      <Heading as="h3" textAlign="left">¿Resides aquí por menos de 2 años?</Heading>
+      <Heading as="h3" paddingBottom={3} textAlign="left">¿Resides aquí por menos de 2 años?</Heading>
       <Flex>
         <Flex mr={3}>
           <Input
