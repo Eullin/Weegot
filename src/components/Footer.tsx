@@ -14,7 +14,7 @@ color: ${({ theme }) => theme.colors.white}
     a {
     padding: 2rem 1rem;
     padding-bottom: 20px;
-    color: ${({ theme }) => theme.colors.white}
+    color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
   }
 `
@@ -30,7 +30,7 @@ const Box = styled.div`
     span {
       padding: 10px 0;
     }
-    a: first-child {
+    a first-child {
       padding-top: 20px 0;
       padding-bottom: 10px 0;
     }
