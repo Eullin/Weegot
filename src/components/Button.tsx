@@ -4,6 +4,7 @@ import { color, typography, space, layout, LayoutProps } from "styled-system"
 
 type ButtonProps = {
   onClick: () => void;
+  type: string;
   text: string;
 } & LayoutProps
 

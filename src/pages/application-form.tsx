@@ -122,7 +122,7 @@ const ApplicationForm = () => {
                 <Work values={values} setFieldValue={setFieldValue} coApplicant={coApplicant}/>
               </>
             )}
-            <Flex justifyContent="center" m={3}><Button onClick={handleSubmit} text="Enviar" /></Flex>
+            <Flex justifyContent="center" m={3}><Button  type="submit"   onClick={handleSubmit} text="Enviar" /></Flex>
           </FormBox>
         </form>
       </MainBox>
