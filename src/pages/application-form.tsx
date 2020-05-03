@@ -104,7 +104,7 @@ const ApplicationForm = () => {
     <Layout>
       <MainBox>
         <SEO title="Page two" />
-        <form name="contact" method="post" netlify-honeypot="bot-field" data-netlify="true">
+        <form name="application-form" method="post" netlify-honeypot="bot-field" data-netlify="true">
         <input type="hidden" name="bot-field" />
           <FormBox>
             <Heading textAlign={["left", "center"]}>Aplicación de crédito</Heading>
